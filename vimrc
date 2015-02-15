@@ -51,9 +51,9 @@ autocmd FileType text setlocal textwidth=78
 
 set number			" show line number
 syntax enable
-set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+set background=dark
 set clipboard=unnamedplus	" alias unnamed register to the + register
 set smartcase			" only be case sensitive when it matters!
 set mouse=a                     " in most terminal emulators this works fine!
