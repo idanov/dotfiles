@@ -15,7 +15,7 @@ antigen bundle web-search
 antigen bundle rupa/z
 antigen bundle zsh-users/zsh-syntax-highlighting
 # Load theme
-antigen theme alanpeabody
+antigen theme agnoster
 # Tell antigen that you're done
 antigen apply
 
@@ -32,3 +32,4 @@ export PATH=~/.dotfiles/bin:${PATH}
 if [ -f ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
+
