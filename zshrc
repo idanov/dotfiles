@@ -14,6 +14,7 @@ antigen bundle web-search
 # Github plugins
 antigen bundle rupa/z
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 # Load theme
 antigen theme agnoster
 # Tell antigen that you're done
