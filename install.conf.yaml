@@ -9,6 +9,7 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.spacemacs: spacemacs
 -
   shell:
     -
