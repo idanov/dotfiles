@@ -43,6 +43,7 @@ filetype plugin indent on    " required
 " Plugins' configuration
 nnoremap <F3> :NERDTreeToggle<cr>
 nnoremap <F5> :UndotreeToggle<cr>
+let mapleader = " "
 let g:undotree_WindowLayout = 3
 let g:csv_autocmd_arrange = 1
 
