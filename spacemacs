@@ -82,10 +82,17 @@ This function should only modify configuration layer settings."
           org-agenda-todo-ignore-scheduled t
           org-agenda-skip-scheduled-if-done t
           org-agenda-skip-deadline-if-done t
-          org-agenda-custom-commands '(("n" "Agenda and all TODOs"
+          org-agenda-custom-commands '(("o" "Agenda and work TODOs"
                                         ((agenda "")
-                                         (alltodo ""
-                                                  ((org-agenda-skip-function 'skip-all-siblings-but-first))))))
+                                         (tags-todo "@work"
+                                                    ((org-agenda-skip-function 'skip-all-siblings-but-first))))
+                                        ((org-agenda-sorting-strategy '(priority-down))))
+                                       ("n" "Agenda and non-work TODOs"
+                                        ((agenda "")
+                                         (tags "-@work-@habit"
+                                               ((org-agenda-skip-function 'skip-all-siblings-but-first))))
+                                        ((org-agenda-sorting-strategy '(priority-down))))
+                                       )
           org-refile-targets '(("~/org/someday.org" :level . 1)
                                ("~/org/projects.org" :maxlevel . 2)
                                ("~/org/areas.org" :maxlevel . 2))
