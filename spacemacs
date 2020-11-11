@@ -572,6 +572,8 @@ before packages are loaded."
                                  "* %?\nEntered on %U\n  %i\n  %a")
                                 ("j" "Journal entry" entry (function org-journal-find-location)
                                  "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")))
+
+  (add-hook 'auto-save-hook 'org-save-all-org-buffers)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
