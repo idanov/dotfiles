@@ -47,7 +47,6 @@ This function should only modify configuration layer settings."
      ;; lsp
      markdown
      multiple-cursors
-     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -56,7 +55,6 @@ This function should only modify configuration layer settings."
      ;; version-control
      emoji
      games
-     python
      yaml
      plantuml
      latex
@@ -67,9 +65,9 @@ This function should only modify configuration layer settings."
      shell
      epub
      pdf
-
      (org :variables
           org-want-todo-bindings t
+          org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
           org-enable-sticky-header t
           org-enable-reveal-js-support t
           org-enable-org-journal-support t
@@ -77,20 +75,27 @@ This function should only modify configuration layer settings."
           org-journal-file-format "%Y-%m-%d"
           org-agenda-files '("~/org/projects.org"
                              "~/org/areas.org")
-          org-agenda-todo-ignore-deadlines t
           org-agenda-todo-ignore-with-date t
-          org-agenda-todo-ignore-scheduled t
           org-agenda-skip-scheduled-if-done t
+          org-agenda-include-diary t
           org-agenda-skip-deadline-if-done t
           org-agenda-custom-commands '(("o" "Agenda and work TODOs"
-                                        ((agenda "")
+                                        ((tags "@work+PRIORITY=\"A\""
+                                               ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                                                (org-agenda-overriding-header "High-priority tasks:")))
+                                         (agenda "")
                                          (tags-todo "@work"
-                                                    ((org-agenda-skip-function 'skip-all-siblings-but-first))))
+                                                    ((org-agenda-skip-function 'skip-all-siblings-but-first)
+                                                     (org-agenda-overriding-header "Next tasks at work:"))))
                                         ((org-agenda-sorting-strategy '(priority-down))))
                                        ("n" "Agenda and non-work TODOs"
-                                        ((agenda "")
+                                        ((tags "-@work-@habit+PRIORITY=\"A\""
+                                               ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                                                (org-agenda-overriding-header "High-priority tasks:")))
+                                         (agenda "")
                                          (tags "-@work-@habit"
-                                               ((org-agenda-skip-function 'skip-all-siblings-but-first))))
+                                               ((org-agenda-skip-function 'skip-all-siblings-but-first)
+                                                (org-agenda-overriding-header "Next tasks at home:"))))
                                         ((org-agenda-sorting-strategy '(priority-down))))
                                        )
           org-refile-targets '(("~/org/someday.org" :level . 1)
@@ -118,10 +123,10 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-                                      (org-global-capture :location (recipe
-                                                                     :fetcher github
-                                                                     :repo "idanov/org-global-capture.el"))
-     )
+          (org-global-capture :location (recipe :fetcher github
+                                                :repo "idanov/org-global-capture.el"))
+          (bulgarian-holidays :location (recipe :fetcher github
+                                                :repo "idanov/bulgarian-holidays.el")))
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -534,21 +539,25 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setenv "WORKON_HOME" "~/.local/share/anaconda3/envs")
   (defun skip-all-siblings-but-first ()
-    "Skip all but the first non-done entry."
+    "Skip all entries with priority A (2000), scheduled or with deadline
+     and keep the first not yet done entry."
+    (defun skip-check ()
+      (and (org-entry-is-todo-p)
+           (not (org-get-scheduled-time nil))
+           (not (org-get-deadline-time nil))
+           (> 2000 (org-get-priority (thing-at-point 'line t)))))
     (let (should-skip-entry)
-      (unless (org-current-is-todo)
+      (unless (skip-check)
         (setq should-skip-entry t))
       (save-excursion
         (while (and (not should-skip-entry)
                     (org-goto-sibling t))
-          (when (org-current-is-todo)
+          (when (skip-check)
             (setq should-skip-entry t))))
       (when should-skip-entry
         (or (outline-next-heading)
             (goto-char (point-max))))))
-  (defun org-current-is-todo ()
-    (string= "TODO"
-             (org-get-todo-state))))
+  )
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -564,6 +573,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (require 'org-global-capture)
+  (require 'bulgarian-holidays)
 
   (defun org-journal-find-location ()
     ;; Open today's journal, but specify a non-nil prefix argument in order to
@@ -573,6 +583,7 @@ before packages are loaded."
     ;; will add the new entry as a child entry.
     (goto-char (point-min)))
 
+  (setq calendar-holidays (remove-duplicates (append calendar-holidays holiday-bulgarian-holidays)))
   (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
                                  "* TODO %?\n  %u\n  %a")
                                 ("n" "Note" entry (file+headline "~/org/inbox.org" "Notes")
