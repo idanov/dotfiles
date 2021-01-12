@@ -10,3 +10,5 @@ lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(
 	editor = vim
 [include]
         path = ~/.gitconfig.local
+[pull]
+	rebase = true
