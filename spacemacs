@@ -586,7 +586,7 @@ before packages are loaded."
     ;; will add the new entry as a child entry.
     (goto-char (point-min)))
 
-  (setq calendar-holidays (remove-duplicates (append calendar-holidays holiday-bulgarian-holidays)))
+  (setq holiday-other-holidays (remove-duplicates (append holiday-other-holidays holiday-bulgarian-holidays)))
   (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
                                  "* TODO %?\n  %u\n  %a")
                                 ("n" "Note" entry (file+headline "~/org/inbox.org" "Notes")
