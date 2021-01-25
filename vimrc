@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
@@ -43,7 +44,7 @@ filetype plugin indent on    " required
 " Plugins' configuration
 nnoremap <F3> :NERDTreeToggle<cr>
 nnoremap <F5> :UndotreeToggle<cr>
-let mapleader = " "
+let mapleader = ","
 let g:undotree_WindowLayout = 3
 let g:csv_autocmd_arrange = 1
 
