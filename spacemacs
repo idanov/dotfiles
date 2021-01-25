@@ -596,6 +596,7 @@ before packages are loaded."
 
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
   (display-time-mode 1)
+  (setq vc-follow-symlinks nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
