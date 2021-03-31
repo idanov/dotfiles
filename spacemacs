@@ -84,20 +84,20 @@ This function should only modify configuration layer settings."
                                         ((tags "@work+PRIORITY=\"A\""
                                                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                                                 (org-agenda-overriding-header "High-priority tasks:")))
-                                         (agenda "")
+                                         (agenda "" ((org-agenda-span 'day)))
                                          (tags-todo "@work"
                                                     ((org-agenda-skip-function 'skip-all-siblings-but-first)
                                                      (org-agenda-overriding-header "Next tasks at work:"))))
-                                        ((org-agenda-sorting-strategy '(priority-down))))
+                                        ((org-agenda-sorting-strategy '(habit-up priority-down))))
                                        ("n" "Agenda and non-work TODOs"
                                         ((tags "-@work-@habit+PRIORITY=\"A\""
                                                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                                                 (org-agenda-overriding-header "High-priority tasks:")))
-                                         (agenda "")
+                                         (agenda "" ((org-agenda-span 'day)))
                                          (tags "-@work-@habit"
                                                ((org-agenda-skip-function 'skip-all-siblings-but-first)
                                                 (org-agenda-overriding-header "Next tasks at home:"))))
-                                        ((org-agenda-sorting-strategy '(priority-down))))
+                                        ((org-agenda-sorting-strategy '(habit-up priority-down))))
                                        )
           org-refile-targets '(("~/org/someday.org" :level . 1)
                                ("~/org/projects.org" :maxlevel . 2)
