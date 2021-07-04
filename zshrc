@@ -25,6 +25,7 @@ antigen apply
 #######################
 # Environmental vars
 export EDITOR="vim"
+export VISUAL="emacsclient -c -a emacs"
 # Add scripts
 export PATH=~/.dotfiles/bin:${PATH}
 ######################
