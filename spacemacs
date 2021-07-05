@@ -655,6 +655,11 @@ before packages are loaded."
                                  "* %?\nEntered on %U\n  %i\n  %a")
                                 ("j" "Journal entry" entry (function org-journal-find-location)
                                  "* %(format-time-string org-journal-time-format)%^{Title}\n%i%?")))
+  (setq org-roam-capture-templates '(("d" "default" plain (function org-roam--capture-get-point)
+                                      "%?"
+                                      :file-name "%<%Y%m%d%H%M%S>-${slug}"
+                                      :head "#+title: ${title}\n"
+                                      :unnarrowed t)))
 
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
   (display-time-mode 1)
