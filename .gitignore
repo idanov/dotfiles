@@ -1,2 +1,4 @@
 # Ignore Vundle plugins (this will be managed by Vundle itself instead of git)
 vim/bundle
+# Ignore tmux plugins (this will be managed by tpm itself instead of git)
+tmux/plugins
