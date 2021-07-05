@@ -10,6 +10,7 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.spacemacs: spacemacs
+    ~/.tmux.conf: tmux.conf
 -
   shell:
     -
