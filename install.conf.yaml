@@ -11,6 +11,7 @@
     ~/.zshrc: zshrc
     ~/.spacemacs: spacemacs
     ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux/
 -
   shell:
     -
