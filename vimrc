@@ -57,9 +57,9 @@ syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
 set background=dark
-set clipboard=unnamedplus	" alias unnamed register to the + register
-set smartcase			" only be case sensitive when it matters!
-set mouse=a                     " in most terminal emulators this works fine!
+set clipboard^=unnamed,unnamedplus      " alias unnamed register to the * and + register
+set smartcase                           " only be case sensitive when it matters!
+set mouse=a                             " in most terminal emulators this works fine!
 
 " Load local configuration for vim, if available
 let $LOCALFILE=expand("~/.vimrc.local")
