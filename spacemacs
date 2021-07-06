@@ -622,6 +622,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         (or (outline-next-heading)
             (goto-char (point-max))))))
   (spacemacs/set-leader-keys "ao;" 'helm-org-rifle-agenda-files)
+  (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-delay 0.08)
   )
 
 (defun dotspacemacs/user-load ()
