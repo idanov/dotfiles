@@ -41,13 +41,15 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
 " Plugins' configuration
 nnoremap <F3> :NERDTreeToggle<cr>
 nnoremap <F5> :UndotreeToggle<cr>
 let mapleader = ","
 let g:undotree_WindowLayout = 3
 let g:csv_autocmd_arrange = 1
+
+" Remap ESC key in insert mode
+inoremap jk <Esc>
 
 " For all text files set 'textwidth' to 78 characters.
 autocmd FileType text setlocal textwidth=78
