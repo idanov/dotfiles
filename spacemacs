@@ -121,8 +121,14 @@ This function should only modify configuration layer settings."
              python-formatter 'black
              python-format-on-save t
              python-sort-imports-on-save t
+             pyvenv-workon "spacemacs"
       )
-      ;; myleetcode
+     ;; (myleetcode :variables
+     ;;             leetcode-prefer-language "python3"
+     ;;             leetcode-prefer-sql "mysql"
+     ;;             leetcode-save-solutions t
+     ;;             leetcode-directory "~/workspace/leetcode"
+     ;;             )
      )
 
    ;; List of additional packages that will be installed without being
