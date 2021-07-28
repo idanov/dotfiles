@@ -99,10 +99,15 @@ This function should only modify configuration layer settings."
                                                 (org-agenda-overriding-header "Next tasks at home:"))))
                                         ((org-agenda-sorting-strategy '(habit-up priority-down))))
                                        )
-          org-refile-targets '(("~/org/someday.org" :level . 1)
+          org-refile-targets '(("~/org/someday.org" :maxlevel . 2)
                                ("~/org/projects.org" :maxlevel . 2)
                                ("~/org/areas.org" :maxlevel . 2))
+          ;; this one is to allow for top-level refile
           org-refile-use-outline-path 'file
+          ;; this one is to show all headings and files in helm
+          org-outline-path-complete-in-steps nil
+          ;; this one is to provide with an option to create a new parent node
+          org-refile-allow-creating-parent-nodes 'confirm
           org-modules '(org-habit)
           org-startup-indented t
           org-archive-location "~/org/archives.org::"
@@ -673,6 +678,23 @@ before packages are loaded."
   (display-time-mode 1)
   (setq vc-follow-symlinks nil)
   (add-hook 'org-mode-hook 'org-roam-mode)
+
+  ;; Support Encrypting subtrees This allows me to encrypt subtrees that are
+  ;; tagged with crypt automatically. by default I want to encrypt it to myself.
+  ;; but with properties entries I can encrypt to other people. which is useful in
+  ;; a shared file situation
+  ;; http://yenliangl.blogspot.com/2009/12/encrypt-your-important-data-in-emacs.html
+  ;; http://emacs-fu.blogspot.com/2011/02/keeping-your-secrets-secret.html
+  ;; https://cmdln.org/2016/04/26/how-i-org-with-spacemacs/
+  ;; (require 'org-crypt)
+  (org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance (quote ("crypt")))
+  '(org-crypt-disable-auto-save (quote encrypt))
+
+  ;; GPG key to use for encryption
+  ;; Either the Key ID or set to nil to use symmetric encryption.
+  (setq org-crypt-key "CD295775")
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
