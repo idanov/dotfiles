@@ -128,7 +128,6 @@ This function should only modify configuration layer settings."
              python-formatter 'black
              python-format-on-save t
              python-sort-imports-on-save t
-             pyvenv-workon "spacemacs"
       )
      ;; (myleetcode :variables
      ;;             leetcode-prefer-language "python3"
@@ -677,6 +676,7 @@ before packages are loaded."
   (display-time-mode 1)
   (setq vc-follow-symlinks nil)
   (add-hook 'org-mode-hook 'org-roam-mode)
+  (pyvenv-workon "spacemacs")
 
   ;; Support Encrypting subtrees This allows me to encrypt subtrees that are
   ;; tagged with crypt automatically. by default I want to encrypt it to myself.
