@@ -135,6 +135,7 @@ This function should only modify configuration layer settings."
      ;;             leetcode-save-solutions t
      ;;             leetcode-directory "~/workspace/leetcode"
      ;;             )
+     (conda :variables conda-anaconda-home (expand-file-name "~/.local/share/anaconda3/"))
      )
 
    ;; List of additional packages that will be installed without being
