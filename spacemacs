@@ -149,7 +149,10 @@ This function should only modify configuration layer settings."
           (org-global-capture :location (recipe :fetcher github
                                                 :repo "idanov/org-global-capture.el"))
           (bulgarian-holidays :location (recipe :fetcher github
-                                                :repo "idanov/bulgarian-holidays.el")))
+                                                :repo "idanov/bulgarian-holidays.el"))
+          (emacs-conflict :location (recipe :fetcher github
+                                            :repo "ibizaman/emacs-conflict"))
+          )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -655,6 +658,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (require 'org-global-capture)
   (require 'bulgarian-holidays)
+  (require 'emacs-conflict)
 
   (setq holiday-other-holidays (remove-duplicates (append holiday-other-holidays holiday-bulgarian-holidays)))
   (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
