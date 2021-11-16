@@ -65,6 +65,8 @@ This function should only modify configuration layer settings."
      shell
      epub
      pdf
+     vimscript
+     solidity
      (org :variables
           org-want-todo-bindings t
           org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
