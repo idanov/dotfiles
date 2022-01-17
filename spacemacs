@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(systemd
+   '(csv
+   systemd
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -47,9 +48,10 @@ This function should only modify configuration layer settings."
      ;; lsp
      markdown
      multiple-cursors
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-term-shell "/usr/bin/zsh"
+            shell-default-height 30
+            shell-default-position 'bottom)
      spell-checking
      syntax-checking
      ;; version-control
@@ -62,10 +64,17 @@ This function should only modify configuration layer settings."
      graphviz
      ipython-notebook
      evernote
-     shell
      epub
      pdf
      vimscript
+     (javascript :variables
+                 js2-mode-show-strict-warnings nil
+                 javascript-backend 'lsp
+                 javascript-fmt-tool 'prettier
+                 javascript-fmt-on-save nil
+                 javascript-import-tool 'import-js
+        )
+     php
      solidity
      (org :variables
           org-want-todo-bindings t
@@ -110,11 +119,11 @@ This function should only modify configuration layer settings."
           org-modules '(org-habit)
           org-startup-indented t
           org-archive-location "~/org/archives.org::"
-          org-enable-roam-support t
-          org-enable-roam-protocol t
-          org-enable-roam-server t
-          org-roam-directory "~/org/roam"
-          org-roam-db-location "~/org/roam/org-roam.db"
+          ;; org-enable-roam-support t
+          ;; org-enable-roam-protocol t
+          ;; org-enable-roam-server t
+          ;; org-roam-directory "~/org/roam"
+          ;; org-roam-db-location "~/org/roam/org-roam.db"
           org-enable-appear-support t
           org-enable-valign-support t
           org-enable-org-contacts-support t
@@ -685,7 +694,7 @@ before packages are loaded."
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
   (display-time-mode 1)
   (setq vc-follow-symlinks nil)
-  (add-hook 'org-mode-hook 'org-roam-mode)
+  ;; (add-hook 'org-mode-hook 'org-roam-mode)
   (pyvenv-workon "spacemacs")
 
   ;; Support Encrypting subtrees This allows me to encrypt subtrees that are
@@ -706,8 +715,6 @@ before packages are loaded."
 
 )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
