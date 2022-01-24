@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
      semantic
      git
      helm
-     ;; lsp
+     lsp
      markdown
      multiple-cursors
      (shell :variables
@@ -69,9 +69,11 @@ This function should only modify configuration layer settings."
      vimscript
      (javascript :variables
                  js2-mode-show-strict-warnings nil
+                 js2-mode-show-parse-errors nil
                  javascript-backend 'lsp
+                 javascript-lsp-linter nil
                  javascript-fmt-tool 'prettier
-                 javascript-fmt-on-save nil
+                 javascript-fmt-on-save t
                  javascript-import-tool 'import-js
         )
      php
@@ -140,13 +142,12 @@ This function should only modify configuration layer settings."
              python-format-on-save t
              python-sort-imports-on-save t
       )
-     ;; (myleetcode :variables
-     ;;             leetcode-prefer-language "python3"
-     ;;             leetcode-prefer-sql "mysql"
-     ;;             leetcode-save-solutions t
-     ;;             leetcode-directory "~/workspace/leetcode"
-     ;;             )
-     (conda :variables conda-anaconda-home (expand-file-name "~/.local/share/anaconda3/"))
+     (myleetcode :variables
+                 leetcode-prefer-language "python3"
+                 leetcode-prefer-sql "mysql"
+                 leetcode-save-solutions t
+                 leetcode-directory "~/workspace/leetcode"
+                 )
      )
 
    ;; List of additional packages that will be installed without being
