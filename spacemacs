@@ -125,6 +125,7 @@ This function should only modify configuration layer settings."
           ;; org-enable-roam-protocol t
           ;; org-enable-roam-server t
           ;; org-roam-directory "~/org/roam"
+          ;; org-roam-dailies-directory "journals/"
           ;; org-roam-db-location "~/org/roam/org-roam.db"
           org-enable-appear-support t
           org-enable-valign-support t
