@@ -45,7 +45,9 @@ This function should only modify configuration layer settings."
      semantic
      git
      helm
-     lsp
+     (lsp :variables
+          lsp-lens-enable t
+          lsp-use-lsp-ui t)
      markdown
      multiple-cursors
      (shell :variables
@@ -137,7 +139,8 @@ This function should only modify configuration layer settings."
                         persp-autokill-buffer-on-remove 'kill-weak
                         spacemacs-layouts-restrict-spc-tab t)
      (python :variables
-             python-backend 'anaconda
+             python-backend 'lsp
+             python-lsp-server 'pyright
              python-test-runner 'pytest
              python-formatter 'black
              python-format-on-save t
