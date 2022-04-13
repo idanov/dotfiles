@@ -141,7 +141,12 @@ This function should only modify configuration layer settings."
           org-enable-org-contacts-support t
           org-contacts-files '("~/org/areas.org")
       )
-     treemacs
+     (treemacs :variables
+              treemacs-use-scope-type 'Perspectives
+              treemacs-indent-guide-style 'line
+              treemacs-use-git-mode 'simple
+              treemacs-lock-width t
+              treemacs-use-all-the-icons-theme t)
      (spacemacs-layouts :variables
                         persp-autokill-buffer-on-remove 'kill-weak
                         spacemacs-layouts-restrict-spc-tab t)
