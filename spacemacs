@@ -588,7 +588,7 @@ It should only modify the values of Spacemacs settings."
    ;; performance issues, instead of calculating the frame title by
    ;; `spacemacs/title-prepare' all the time.
    ;; (default "%I@%S")
-   dotspacemacs-frame-title-format "%I@%S"
+   dotspacemacs-frame-title-format "%a@%t"
 
    ;; Format specification for setting the icon title format
    ;; (default nil - same as frame-title-format)
@@ -676,6 +676,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.1)
 )
+
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
