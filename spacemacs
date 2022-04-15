@@ -81,7 +81,7 @@ This function should only modify configuration layer settings."
                  js2-basic-offset 2
                  js-indent-level 2
                  javascript-backend 'lsp
-                 javascript-lsp-linter nil
+                 javascript-lsp-linter t
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t
                  javascript-import-tool 'import-js
