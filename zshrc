@@ -33,6 +33,7 @@ antigen apply
 # Environmental vars
 export EDITOR="vim"
 export VISUAL="emacsclient -c -a emacs"
+export BAT_THEME="TwoDark"
 # Add scripts
 export PATH=~/.dotfiles/bin:${PATH}
 ######################
