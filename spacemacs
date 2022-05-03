@@ -97,6 +97,8 @@ This function should only modify configuration layer settings."
           org-enable-hugo-support t
           org-download-image-dir "~/org/images"
           org-default-notes-file "~/org/inbox.org"
+          org-enable-notifications t
+          org-start-notification-daemon-on-startup t
           org-agenda-files '("~/org/projects.org"
                              "~/org/areas.org")
           org-agenda-todo-ignore-with-date t
