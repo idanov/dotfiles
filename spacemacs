@@ -94,6 +94,7 @@ This function should only modify configuration layer settings."
           org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
           org-enable-sticky-header t
           org-enable-reveal-js-support t
+          org-download-image-dir "~/org/images"
           org-default-notes-file "~/org/inbox.org"
           org-agenda-files '("~/org/projects.org"
                              "~/org/areas.org")
