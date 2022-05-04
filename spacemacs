@@ -691,6 +691,10 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         '("--24-bit-color" "always"
           "--features" "magit-delta"
           "--color-only"))
+  (with-eval-after-load 'treemacs
+    (defun treemacs-ignore-gitignore (file _)
+      (string= file "__pycache__"))
+    (push #'treemacs-ignore-gitignore treemacs-ignored-file-predicates))
 )
 
 
