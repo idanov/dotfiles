@@ -687,6 +687,10 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (spacemacs/set-leader-keys "ao;" 'helm-org-rifle-agenda-files)
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.1)
+  (setq magit-delta-delta-args
+        '("--24-bit-color" "always"
+          "--features" "magit-delta"
+          "--color-only"))
 )
 
 

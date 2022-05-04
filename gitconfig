@@ -27,7 +27,7 @@
 
 [delta]
 	features = decorations
-	line-numbers = true
+	features = line-numbers
 	navigate = true
 
 [merge]
@@ -35,6 +35,9 @@
 
 [diff]
 	colorMoved = default
+
+[delta "magit-delta"]
+	line-numbers = false
 
 [delta "interactive"]
 	keep-plus-minus-markers = true
