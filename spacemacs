@@ -747,14 +747,13 @@ before packages are loaded."
   (setq org-roam-capture-templates '(("d" "default"
                                       plain
                                       "%?"
-                                      :target (file+head "pages/%<%Y%m%d%H%M%S>-${slug}.org"
-                                                         "#+title: ${title}\n")
+                                      :target (file+head "pages/${slug}.org" "#+title: ${title}\n")
                                       :unnarrowed t)))
 
   (setq org-roam-dailies-capture-templates '(("d" "default"
                                               entry
                                               "* %?"
-                                              :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
+                                              :target (file+head "%<%Y_%m_%d>.org" "#+title: %<%Y_%m_%d>\n"))))
 
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
   (display-time-mode 1)
