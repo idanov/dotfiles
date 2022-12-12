@@ -142,6 +142,7 @@ This function should only modify configuration layer settings."
           org-enable-roam-support t
           org-enable-roam-protocol t
           org-enable-roam-server t
+          org-enable-roam-ui t
           org-roam-directory "~/org/roam"
           org-roam-dailies-directory "journals/"
           org-roam-db-location "~/org/roam/org-roam.db"
@@ -184,7 +185,6 @@ This function should only modify configuration layer settings."
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-          (org-roam-ui)
           (org-global-capture :location (recipe :fetcher github
                                                 :repo "idanov/org-global-capture.el"))
           (bulgarian-holidays :location (recipe :fetcher github
