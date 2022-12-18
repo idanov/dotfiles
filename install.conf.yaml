@@ -12,6 +12,7 @@
     ~/.spacemacs: spacemacs
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux/
+    ~/.config/lvim/config.lua: lvim/config.lua
     ~/.p10k.zsh: p10k.zsh
 -
   shell:
