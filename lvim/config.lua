@@ -212,6 +212,63 @@ lvim.plugins = {
         require("better_escape").setup()
       end,
     },
+    {
+      "pwntester/octo.nvim",
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim',
+        'kyazdani42/nvim-web-devicons',
+      },
+      config = function()
+        require("octo").setup()
+      end,
+    },
+    {
+      "ruifm/gitlinker.nvim",
+      event = "BufRead",
+      config = function()
+      require("gitlinker").setup {
+            opts = {
+              -- remote = 'github', -- force the use of a specific remote
+                -- adds current line nr in the url for normal mode
+                add_current_line_on_normal_mode = true,
+              -- callback for what to do with the url
+                action_callback = require("gitlinker.actions").open_in_browser,
+              -- print the url after performing the action
+                print_url = false,
+              -- mapping to call url generation
+                mappings = "<leader>gy",
+            },
+          }
+      end,
+      requires = "nvim-lua/plenary.nvim",
+    },
+    {
+      "f-person/git-blame.nvim",
+      event = "BufRead",
+      config = function()
+        vim.cmd "highlight default link gitblame SpecialComment"
+        vim.g.gitblame_enabled = 0
+      end,
+    },
+    {
+      "TimUntersberger/neogit",
+      requires = {
+        'nvim-lua/plenary.nvim',
+        'sindrets/diffview.nvim',
+      },
+      config = function()
+        require("neogit").setup {
+           use_magit_keybindings = false,
+        }
+      end,
+    },
+    { "Mofiqul/vscode.nvim" },
+    { "Mofiqul/dracula.nvim" },
+    { "shaunsingh/moonlight.nvim" },
+    { "EdenEast/nightfox.nvim" },
+    { "projekt0n/github-nvim-theme" },
+    { "catppuccin/nvim", as = "catppuccin" },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
