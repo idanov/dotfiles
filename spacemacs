@@ -33,7 +33,6 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(rust
-     typescript
      csv
      systemd
      ;; ----------------------------------------------------------------
@@ -78,6 +77,12 @@ This function should only modify configuration layer settings."
      epub
      pdf
      vimscript
+     (typescript :variables
+                 typescript-fmt-on-save t
+                 typescript-indent-level 2
+                 typescript-fmt-tool 'prettier
+                 typescript-linter 'eslint
+                 typescript-backend 'lsp)
      (javascript :variables
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil
@@ -88,8 +93,7 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t
                  javascript-import-tool 'import-js
-                 javascript-repl `nodejs
-        )
+                 javascript-repl `nodejs)
      php
      solidity
      (org :variables
