@@ -168,13 +168,6 @@ This function should only modify configuration layer settings."
              python-format-on-save t
              python-sort-imports-on-save t
       )
-     (myleetcode :variables
-                 leetcode-prefer-language "python3"
-                 leetcode-retry-threshold 5
-                 leetcode-prefer-sql "mysql"
-                 leetcode-save-solutions t
-                 leetcode-directory "~/workspace/leetcode"
-              )
      )
 
    ;; List of additional packages that will be installed without being
