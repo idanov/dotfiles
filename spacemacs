@@ -108,6 +108,10 @@ This function should only modify configuration layer settings."
           org-enable-reveal-js-support t
           org-enable-hugo-support t
           org-download-image-dir "~/org/images"
+          org-download-method 'directory
+          org-download-heading-lvl nil
+          org-download-screenshot-method (if (eq system-type 'darwin) "pngpaste %s" "gnome-screenshot -a -f %s")
+          org-image-actual-width 700
           org-default-notes-file "~/org/inbox.org"
           org-enable-notifications t
           org-start-notification-daemon-on-startup t
