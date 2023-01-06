@@ -765,7 +765,6 @@ before packages are loaded."
   (display-time-mode 1)
   (setq vc-follow-symlinks nil)
   (diff-hl-flydiff-mode '(:global t))
-  (pyvenv-workon "spacemacs")
 
   ;; Support Encrypting subtrees This allows me to encrypt subtrees that are
   ;; tagged with crypt automatically. by default I want to encrypt it to myself.
