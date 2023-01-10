@@ -782,6 +782,11 @@ before packages are loaded."
   ;; Either the Key ID or set to nil to use symmetric encryption.
   (setq org-crypt-key "CD295775")
 
+  ;; Set the files that are searched for writing tokens
+  ;; by default ~/.authinfo will be used
+  (setf epg-pinentry-mode 'loopback)
+  (setq auth-sources '("~/.authinfo.gpg"))
+
 )
 
 (defun dotspacemacs/emacs-custom-settings ()
