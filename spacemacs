@@ -77,8 +77,6 @@ This function should only modify configuration layer settings."
      latex
      html
      graphviz
-     ipython-notebook
-     evernote
      epub
      pdf
      vimscript
@@ -784,7 +782,7 @@ before packages are loaded."
 
   ;; Set the files that are searched for writing tokens
   ;; by default ~/.authinfo will be used
-  (setf epg-pinentry-mode 'loopback)
+  (setq epg-pinentry-mode 'loopback)
   (setq auth-sources '("~/.authinfo.gpg"))
 
 )
