@@ -783,7 +783,7 @@ before packages are loaded."
 
   ;; GPG key to use for encryption
   ;; Either the Key ID or set to nil to use symmetric encryption.
-  (setq org-crypt-key "CD295775")
+  (setq org-crypt-key "E973BBEECB9681A9")
 
   ;; Set the files that are searched for writing tokens
   ;; by default ~/.authinfo will be used
