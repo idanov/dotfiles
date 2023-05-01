@@ -166,6 +166,7 @@ This function should only modify configuration layer settings."
           org-roam-directory "~/org/roam"
           org-roam-dailies-directory "journals/"
           org-roam-db-location "~/org/roam/org-roam.db"
+          org-roam-completion-everywhere t
           org-enable-appear-support t
           org-enable-valign-support t
           org-enable-transclusion-support t
