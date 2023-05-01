@@ -103,6 +103,9 @@ This function should only modify configuration layer settings."
                  javascript-fmt-on-save t
                  javascript-import-tool 'import-js
                  javascript-repl `nodejs)
+     (terraform :variables
+                 terraform-auto-format-on-save t
+                 terraform-backend 'lsp)
      php
      solidity
      (org :variables
