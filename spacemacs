@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
           lsp-lens-enable t
           lsp-use-lsp-ui t)
      markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
      (shell :variables
             shell-default-term-shell "/bin/zsh"
