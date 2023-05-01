@@ -54,7 +54,6 @@ This function should only modify configuration layer settings."
      (lsp :variables
           lsp-lens-enable t
           lsp-use-lsp-ui t)
-     markdown
      (markdown :variables markdown-live-preview-engine 'vmd)
      (docker :variables docker-dockerfile-backend 'lsp)
      multiple-cursors
