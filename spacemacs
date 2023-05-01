@@ -74,7 +74,7 @@ This function should only modify configuration layer settings."
                       version-control-global-margin t)
      emoji
      games
-     yaml
+     (yaml :variables yaml-enable-lsp t)
      plantuml
      latex
      html
