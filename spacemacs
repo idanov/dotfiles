@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
           lsp-use-lsp-ui t)
      markdown
      (markdown :variables markdown-live-preview-engine 'vmd)
+     (docker :variables docker-dockerfile-backend 'lsp)
      multiple-cursors
      (shell :variables
             shell-default-term-shell "/bin/zsh"
