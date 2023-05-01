@@ -164,6 +164,7 @@ This function should only modify configuration layer settings."
           org-roam-db-location "~/org/roam/org-roam.db"
           org-enable-appear-support t
           org-enable-valign-support t
+          org-enable-transclusion-support t
           org-enable-org-contacts-support t
           org-contacts-files '("~/org/areas.org")
       )
