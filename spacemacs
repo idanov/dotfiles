@@ -746,6 +746,7 @@ before packages are loaded."
   (require 'org-global-capture)
   (require 'bulgarian-holidays)
   (require 'emacs-conflict)
+  (require 'org-macs)
 
   (setq holiday-other-holidays (remove-duplicates (append holiday-other-holidays holiday-bulgarian-holidays)))
   (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
