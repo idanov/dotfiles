@@ -190,6 +190,7 @@ This function should only modify configuration layer settings."
              python-formatter 'black
              python-format-on-save t
              python-sort-imports-on-save t
+             python-indent-guess-indent-offset-verbose nil
       )
      )
 
