@@ -210,6 +210,8 @@ This function should only modify configuration layer settings."
                                                 :repo "idanov/bulgarian-holidays.el"))
           (emacs-conflict :location (recipe :fetcher github
                                             :repo "ibizaman/emacs-conflict"))
+          (org-roam-logseq :location (recipe :fetcher github
+                                             :repo "idanov/org-roam-logseq.el"))
         )
 
    ;; A list of packages that cannot be updated.
@@ -747,7 +749,10 @@ before packages are loaded."
   (require 'org-global-capture)
   (require 'bulgarian-holidays)
   (require 'emacs-conflict)
+  (require 'org-roam-logseq)
   (require 'org-macs)
+
+  (org-roam-db-autosync-mode)
 
   (setq holiday-other-holidays (cl-remove-duplicates (append holiday-other-holidays holiday-bulgarian-holidays)))
   (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
@@ -771,7 +776,7 @@ before packages are loaded."
   (setq org-roam-dailies-capture-templates '(("d" "default"
                                               entry
                                               "* %?"
-                                              :target (file+head "%<%Y_%m_%d>.org" "#+title: %<%Y_%m_%d>\n"))))
+                                              :target (file+head "%<%Y_%m_%d>.org" "#+title: %<%Y-%m-%d>\n"))))
 
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
   (display-time-mode 1)
