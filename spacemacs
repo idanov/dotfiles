@@ -168,6 +168,7 @@ This function should only modify configuration layer settings."
           org-roam-dailies-directory "journals/"
           org-roam-db-location "~/org/roam/org-roam.db"
           org-roam-completion-everywhere t
+          org-roam-file-exclude-regexp "\\.st[^/]*\\|logseq/.*$"
           org-enable-appear-support t
           org-enable-valign-support t
           org-enable-transclusion-support t
