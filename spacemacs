@@ -204,6 +204,7 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+          (doom-themes)
           (org-global-capture :location (recipe :fetcher github
                                                 :repo "idanov/org-global-capture.el"))
           (bulgarian-holidays :location (recipe :fetcher github
@@ -385,7 +386,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(doom-one
+                         doom-one-light
+                         doom-dracula
+                         spacemacs-dark
                          spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -395,7 +399,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(doom :separator arrow :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -779,7 +783,16 @@ before packages are loaded."
                                               :target (file+head "%<%Y_%m_%d>.org" "#+title: %<%Y-%m-%d>\n"))))
 
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
-  (display-time-mode 1)
+
+  (defun idanov/add-python-env ()
+    "Add my Python environment to doom-modeline"
+    (when (and (eq major-mode 'python-mode)
+               pyvenv-virtual-env-name)
+      (setq doom-modeline-env--version (concat doom-modeline-env--version " (" pyvenv-virtual-env-name ")"))
+      ))
+  (add-hook 'doom-modeline-after-update-env-hook #'idanov/add-python-env)
+  (display-time-mode t)
+  (display-battery-mode t)
   (setq vc-follow-symlinks nil)
   (diff-hl-flydiff-mode '(:global t))
 
