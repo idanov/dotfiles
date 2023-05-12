@@ -172,6 +172,7 @@ This function should only modify configuration layer settings."
           org-roam-file-exclude-regexp "\\.st[^/]*\\|logseq/.*$"
           org-enable-appear-support t
           org-enable-valign-support t
+          org-hide-emphasis-markers t
           org-enable-transclusion-support t
           org-enable-org-contacts-support t
           org-contacts-files '("~/org/areas.org")
