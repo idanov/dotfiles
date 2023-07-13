@@ -112,7 +112,10 @@ This function should only modify configuration layer settings."
      solidity
      (org :variables
           org-want-todo-bindings t
-          org-todo-keywords '((sequence "TODO(t)" "DOING(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
+          org-todo-keywords '((sequence "TODO(t)" "DOING(i!)" "WAITING(w@/!)" "|" "DONE(d)" "CANCELLED(c)"))
+          org-superstar-todo-bullet-alist '(("TODO" . 9744) ("DOING" . 9881) ("WAITING" . 9684) ("DONE" . 9745) ("CANCELLED" . 9746))
+          org-superstar-special-todo-items t
+          org-superstar-headline-bullets-list '("◉" "○" "●" "◎" "◍" "◈" "◇" "◆")
           org-enable-sticky-header t
           org-enable-reveal-js-support t
           org-enable-hugo-support t
@@ -411,7 +414,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -784,6 +787,47 @@ before packages are loaded."
                                               "* %?"
                                               :target (file+head "%<%Y_%m_%d>.org" "#+title: %<%Y-%m-%d>\n"))))
 
+  ;; Configure org-mode to use another font
+  (set-face-attribute 'org-document-title nil :font "Iosevka Aile" :weight 'bold :height 1.3)
+  (dolist (face '((org-level-1 . 1.2)
+                  (org-level-2 . 1.1)
+                  (org-level-3 . 1.05)
+                  (org-level-4 . 1.0)
+                  (org-level-5 . 1.1)
+                  (org-level-6 . 1.1)
+                  (org-level-7 . 1.1)
+                  (org-level-8 . 1.1)))
+    (set-face-attribute (car face) nil :font "Iosevka Aile" :weight 'medium :height (cdr face)))
+
+  ;; Make sure org-indent face is available
+  (require 'org-indent)
+
+  ;; Ensure that anything that should be fixed-pitch in Org files appears that way
+  (set-face-attribute 'org-block nil :foreground nil :inherit 'fixed-pitch)
+  (set-face-attribute 'org-table nil  :inherit 'fixed-pitch)
+  (set-face-attribute 'org-formula nil  :inherit 'fixed-pitch)
+  (set-face-attribute 'org-code nil   :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-indent nil :inherit '(org-hide fixed-pitch))
+  (set-face-attribute 'org-verbatim nil :inherit '(shadow fixed-pitch))
+  (set-face-attribute 'org-special-keyword nil :inherit '(font-lock-comment-face fixed-pitch))
+  (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
+  (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
+
+  ;; Get rid of the background on column views
+  (set-face-attribute 'org-column nil :background nil)
+  (set-face-attribute 'org-column-title nil :background nil)
+
+  ;; TODO: Others to consider
+  ;; '(org-document-info-keyword ((t (:inherit (shadow fixed-pitch)))))
+  ;; '(org-meta-line ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+  ;; '(org-property-value ((t (:inherit fixed-pitch))) t)
+  ;; '(org-special-keyword ((t (:inherit (font-lock-comment-face fixed-pitch)))))
+  ;; '(org-table ((t (:inherit fixed-pitch :foreground "#83a598"))))
+  ;; '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
+  ;; '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
+
+  ;; add a soft line wrap for overly long lines
+  (add-hook 'org-mode-hook 'visual-line-mode)
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
   (defun idanov/add-python-env ()
