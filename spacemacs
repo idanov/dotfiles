@@ -47,7 +47,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      semantic
      (git :variables git-enable-magit-delta-plugin t)
-     helm
+     (helm :variables helm-follow-mode-persistent t)
      (tree-sitter :variables
                   spacemacs-tree-sitter-hl-black-list '(js2-mode rjsx-mode)
                   tree-sitter-syntax-highlight-enable t
