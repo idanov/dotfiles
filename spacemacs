@@ -46,7 +46,7 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      semantic
-     (git :variables git-enable-magit-delta-plugin t)
+     (git :variables git-enable-magit-delta-plugin nil)
      (helm :variables helm-follow-mode-persistent t)
      (tree-sitter :variables
                   spacemacs-tree-sitter-hl-black-list '(js2-mode rjsx-mode)
