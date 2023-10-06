@@ -95,6 +95,7 @@ This function should only modify configuration layer settings."
                  typescript-linter 'eslint
                  typescript-backend 'lsp)
      (javascript :variables
+                 node-add-modules-path t
                  js2-mode-show-strict-warnings nil
                  js2-mode-show-parse-errors nil
                  js2-basic-offset 2
