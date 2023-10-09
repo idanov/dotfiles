@@ -768,6 +768,10 @@ before packages are loaded."
   (require 'org-macs)
   (require 'chatgpt-shell)
   (setq chatgpt-shell-openai-key (getenv "OPENAI_API_KEY"))
+  (spacemacs/declare-prefix "ag" "chatgpt-shell")
+  (spacemacs/set-leader-keys
+    "agg" 'chatgpt-shell
+    "agk" 'chatgpt-shell-clear-buffer)
 
   (org-roam-db-autosync-mode)
 
