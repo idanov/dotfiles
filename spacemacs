@@ -46,6 +46,10 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      semantic
+     (openai :variables
+             openai-key (getenv "OPENAI_API_KEY")
+             openai-user (getenv "OPENAI_USER")
+             )
      (git :variables git-enable-magit-delta-plugin nil)
      (helm :variables helm-follow-mode-persistent t)
      (tree-sitter :variables
@@ -210,6 +214,7 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
+          (chatgpt-shell)
           (doom-themes)
           (org-global-capture :location (recipe :fetcher github
                                                 :repo "idanov/org-global-capture.el"))
@@ -761,6 +766,8 @@ before packages are loaded."
   (require 'emacs-conflict)
   (require 'org-roam-logseq)
   (require 'org-macs)
+  (require 'chatgpt-shell)
+  (setq chatgpt-shell-openai-key (getenv "OPENAI_API_KEY"))
 
   (org-roam-db-autosync-mode)
 
