@@ -45,6 +45,8 @@ This function should only modify configuration layer settings."
      auto-completion
      ;; better-defaults
      emacs-lisp
+     copy-as-format
+     nav-flash
      evil-better-jumper
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      semantic
