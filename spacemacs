@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
      evil-better-jumper
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      semantic
+     (docker :variables docker-dockerfile-backend 'lsp)
      (openai :variables
              openai-key (getenv "OPENAI_API_KEY")
              openai-user (getenv "OPENAI_USER")
