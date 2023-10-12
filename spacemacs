@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
      auto-completion
      ;; better-defaults
      emacs-lisp
+     hackernews
      copy-as-format
      nav-flash
      evil-better-jumper
