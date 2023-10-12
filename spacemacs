@@ -89,11 +89,6 @@ This function should only modify configuration layer settings."
      epub
      pdf
      vimscript
-     (tree-sitter :variables
-                  spacemacs-tree-sitter-hl-black-list '(js2-mode rjsx-mode)
-                  tree-sitter-syntax-highlight-enable t
-                  tree-sitter-fold-enable t
-                  tree-sitter-fold-indicators-enable nil)
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-indent-level 2
