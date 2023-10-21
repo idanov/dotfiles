@@ -50,6 +50,10 @@ This function should only modify configuration layer settings."
      nav-flash
      evil-better-jumper
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
+     (sql :variables sql-backend 'lsp
+                     sql-capitalize-keywords t
+                     sql-capitalize-keywords-blacklist '("name")
+                     sql-capitalize-keywords-disable-interactive t)
      semantic
      (docker :variables docker-dockerfile-backend 'lsp)
      (openai :variables
