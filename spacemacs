@@ -195,6 +195,7 @@ This function should only modify configuration layer settings."
      (spacemacs-layouts :variables
                         persp-autokill-buffer-on-remove 'kill-weak
                         spacemacs-layouts-restrict-spc-tab t)
+     (conda :variables conda-anaconda-home (file-name-parent-directory (getenv "WORKON_HOME")))
      (python :variables
              python-backend 'lsp
              python-lsp-server 'pyright
