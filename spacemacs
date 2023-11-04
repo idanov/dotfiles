@@ -76,7 +76,8 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-term-shell "/bin/zsh"
             multi-term-program "/bin/zsh"
-            shell-default-shell 'eshell
+            shell-default-shell 'vterm
+            shell-default-full-span nil
             shell-default-height 30
             shell-default-position 'bottom)
      (spell-checking :variables
