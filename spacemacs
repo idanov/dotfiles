@@ -191,6 +191,7 @@ This function should only modify configuration layer settings."
           org-enable-org-contacts-support t
           org-contacts-files '("~/org/areas.org")
       )
+     (tabs :variables tabs-selected-tab-bar 'left)
      (treemacs :variables
               treemacs-use-scope-type 'Perspectives
               treemacs-indent-guide-style 'line
