@@ -783,6 +783,7 @@ before packages are loaded."
 
   (org-roam-db-autosync-mode)
 
+  (setq require-final-newline t)
   (setq holiday-other-holidays (cl-remove-duplicates (append holiday-other-holidays holiday-bulgarian-holidays)))
   (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
                                  "* TODO %?\n  %u\n  %a")
