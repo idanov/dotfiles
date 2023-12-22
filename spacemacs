@@ -232,6 +232,12 @@ This function should only modify configuration layer settings."
                                             :repo "ibizaman/emacs-conflict"))
           (org-roam-logseq :location (recipe :fetcher github
                                              :repo "idanov/org-roam-logseq.el"))
+          ;; support rg 14
+          ;; https://github.com/syl20bnr/spacemacs/issues/16200
+          (helm-ag :location (recipe
+                              :fetcher github
+                              :repo "zozowell/helm-ag"
+                              :branch "further-support-rg"))
         )
 
    ;; A list of packages that cannot be updated.
