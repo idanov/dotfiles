@@ -48,6 +48,10 @@ let mapleader = ","
 let g:undotree_WindowLayout = 3
 let g:csv_autocmd_arrange = 1
 
+" Configure vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 " Remap ESC key in insert mode
 inoremap jk <Esc>
 
