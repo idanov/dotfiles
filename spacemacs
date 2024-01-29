@@ -855,6 +855,7 @@ before packages are loaded."
 
   ;; add a soft line wrap for overly long lines
   (add-hook 'org-mode-hook 'visual-line-mode)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
   (defun idanov/add-python-env ()
