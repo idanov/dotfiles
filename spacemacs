@@ -68,6 +68,7 @@ This function should only modify configuration layer settings."
                   tree-sitter-fold-enable t
                   tree-sitter-fold-indicators-enable nil)
      (lsp :variables
+          lsp-use-upstream-bindings t
           lsp-lens-enable t
           lsp-use-lsp-ui t)
      (markdown :variables markdown-live-preview-engine 'vmd)
