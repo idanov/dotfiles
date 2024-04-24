@@ -224,6 +224,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
           (chatgpt-shell)
+          (ob-chatgpt-shell-setup)
           (doom-themes)
           (org-global-capture :location (recipe :fetcher github
                                                 :repo "idanov/org-global-capture.el"))
@@ -782,6 +783,7 @@ before packages are loaded."
   (require 'org-roam-logseq)
   (require 'org-macs)
   (require 'chatgpt-shell)
+  (require 'ob-chatgpt-shell)
   (setq chatgpt-shell-openai-key (getenv "OPENAI_API_KEY"))
   (spacemacs/declare-prefix "ag" "chatgpt-shell")
   (spacemacs/set-leader-keys
