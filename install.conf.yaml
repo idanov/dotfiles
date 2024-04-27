@@ -4,7 +4,6 @@
     - "~"
 -
   link:
-    ~/.dotfiles: ""
     ~/.gitconfig: gitconfig
     ~/.vim: vim/
     ~/.vimrc: vimrc
@@ -12,7 +11,6 @@
     ~/.spacemacs: spacemacs
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux/
-    ~/.config/lvim/config.lua: lvim/config.lua
     ~/.config/alacritty/alacritty.toml:
       create: true
       path: alacritty.toml
