@@ -16,6 +16,32 @@ To keep submodules at their proper versions, you could include something like
 To upgrade your submodules to their latest versions, you could periodically run
 `git submodule update --init --remote`.
 
+Installation
+================
+
+```sh
+git clone https://github.com/idanov/dotfiles.git ~/.dotfiles
+```
+
+```sh
+cd ~/.dotfiles
+./install
+```
+
+To upgrade the submodules to their latest versions, one could periodically run:
+
+```sh
+cd ~/.dotfiles
+git submodule update --init --remote
+```
+
+or
+
+```sh
+cd ~/.dotfiles
+./install
+```
+
 Credits
 -----------
 My dotfiles were inspired by:
