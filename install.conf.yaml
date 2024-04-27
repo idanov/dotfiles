@@ -13,6 +13,9 @@
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux/
     ~/.config/lvim/config.lua: lvim/config.lua
+    ~/.config/alacritty/alacritty.toml:
+      create: true
+      path: alacritty.toml
     ~/.p10k.zsh: p10k.zsh
 -
   shell:
