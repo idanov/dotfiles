@@ -1,4 +1,7 @@
-import = []
+import = [
+  "~/.config/alacritty/macos.toml",
+  "~/.config/alacritty/linux.toml",
+]
 
 [shell]
 program = "/bin/zsh"
