@@ -9,7 +9,7 @@ TERM = "xterm-256color"
 
 [window]
 opacity = 0.9
-blur = true 
+blur = true
 option_as_alt = "OnlyLeft"
 
 [scrolling]
@@ -20,7 +20,7 @@ normal = { family = "MesloLGS NF", style = "Regular" }
 size = 14.0
 
 [cursor]
-style = { shape = "Block", blinking = "On" }
+style = { shape = "Block", blinking = "Always" }
 
 # Colors (iTerm 2 Dark Background theme)
 [colors]
@@ -65,4 +65,3 @@ blue    = '#6871ff'
 magenta = '#ff76ff'
 cyan    = '#5ffdff'
 white   = '#fffeff'
-
