@@ -1,0 +1,68 @@
+import = []
+
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.9
+blur = true 
+option_as_alt = "OnlyLeft"
+
+[scrolling]
+history = 20000
+
+[font]
+normal = { family = "MesloLGS NF", style = "Regular" }
+size = 14.0
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+# Colors (iTerm 2 Dark Background theme)
+[colors]
+draw_bold_text_with_bright_colors = true
+
+# Default colors
+[colors.primary]
+background = '#000000'
+foreground = '#c7c7c7'
+bright_foreground = '#fffeff'
+
+[colors.cursor]
+cursor = '#c7c7c7'
+text = '#fffeff'
+
+[colors.selection]
+background = '#c1ddff'
+text = '#000000'
+
+[colors.footer_bar]
+foreground = '#005bbb'
+background = '#000000'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#c91b00'
+green   = '#00c200'
+yellow  = '#c7c400'
+blue    = '#0225c7'
+magenta = '#c930c7'
+cyan    = '#00c5c7'
+white   = '#c7c7c7'
+
+# Bright colors
+[colors.bright]
+black   = '#676767'
+red     = '#ff6d67'
+green   = '#5ff967'
+yellow  = '#fefb67'
+blue    = '#6871ff'
+magenta = '#ff76ff'
+cyan    = '#5ffdff'
+white   = '#fffeff'
+
