@@ -4,8 +4,31 @@ My dotfiles
 This here is my very basic setup for keeping my dotfiles in git. I have used the
 template repository for bootstraping dotfiles with [Dotbot][dotbot].
 
-To upgrade the submodules to their latest versions, one could periodically run
-`git submodule update --init --remote`.
+Installation
+================
+
+```sh
+git clone https://github.com/idanov/dotfiles.git ~/.dotfiles
+```
+
+```sh
+cd ~/.dotfiles
+./install
+```
+
+To upgrade the submodules to their latest versions, one could periodically run:
+
+```sh
+cd ~/.dotfiles
+git submodule update --init --remote
+```
+
+or
+
+```sh
+cd ~/.dotfiles
+./install
+```
 
 Credits
 -----------
