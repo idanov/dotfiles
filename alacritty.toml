@@ -11,9 +11,8 @@ args = ["-l"]
 TERM = "xterm-256color"
 
 [window]
-opacity = 0.9
-blur = true
 option_as_alt = "OnlyLeft"
+padding = { x = 5, y = 5 }
 
 [scrolling]
 history = 20000
