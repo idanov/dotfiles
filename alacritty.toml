@@ -19,7 +19,7 @@ history = 20000
 
 [font]
 normal = { family = "MesloLGS NF", style = "Regular" }
-size = 14.0
+#size = 14.0
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
