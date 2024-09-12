@@ -726,6 +726,10 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
+  ;; CLI tools installed by Mise
+  ;; See: https://www.emacswiki.org/emacs/ExecPath
+  (setenv "PATH" (concat (getenv "PATH") ":~/.local/share/mise/shims"))
+  (setq exec-path (append exec-path '("~/.local/share/mise/shims")))
 )
 
 (defun dotspacemacs/user-init ()
