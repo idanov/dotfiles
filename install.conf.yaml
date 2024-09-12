@@ -15,6 +15,12 @@
     ~/.config/alacritty/alacritty.toml:
       create: true
       path: alacritty.toml
+    ~/.config/zed/keymap.json:
+      create: true
+      path: zed/keymap.json
+    ~/.config/zed/settings.json:
+      create: true
+      path: zed/settings.json
     ~/.p10k.zsh: p10k.zsh
 -
   shell:
