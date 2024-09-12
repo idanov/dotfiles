@@ -30,6 +30,7 @@ antigen apply
 #######################
 ## User configuration #
 #######################
+setopt histignorespace
 # Environmental vars
 export EDITOR="vim"
 export VISUAL="emacsclient -c -a emacs"
