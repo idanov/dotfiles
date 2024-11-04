@@ -236,6 +236,11 @@ This function should only modify configuration layer settings."
                                       (evil-tree-edit)
                                       (doom-themes)
                                       (org-modern)
+                                      ;; Need to install https://foosoft.net/projects/anki-connect/
+                                      (anki-editor :location (recipe :fetcher github
+                                                                     :repo "anki-editor/anki-editor"))
+                                      (ankiorg :location (recipe :fetcher github
+                                                                 :repo "orgtre/ankiorg"))
                                       (org-global-capture :location (recipe :fetcher github
                                                                             :repo "idanov/org-global-capture.el"))
                                       (bulgarian-holidays :location (recipe :fetcher github
@@ -779,6 +784,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
       (when should-skip-entry
         (or (outline-next-heading)
             (goto-char (point-max))))))
+
   (spacemacs/set-leader-keys "ao;" 'helm-org-rifle-agenda-files)
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.1)
