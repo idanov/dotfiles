@@ -893,9 +893,20 @@ before packages are loaded."
   ;; '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :height 0.8))))
   ;; '(org-verbatim ((t (:inherit (shadow fixed-pitch))))))
 
+  (defun delete-trailing-whitespace-non-disruptive ()
+    "Delete trailing whitespace in the buffer.
+If in `evil-insert-state`, skip deleting trailing whitespace on the current line."
+    (if (not (evil-insert-state-p))
+        (delete-trailing-whitespace)
+      ;; If in `evil-insert-state`, calculate current line boundaries and delete trailing whitespace accordingly
+      (let ((current-line-beginning (max (point-min) (1- (line-beginning-position))))
+            (current-line-end (min (point-max) (1+ (line-end-position)))))
+        (delete-trailing-whitespace (point-min) current-line-beginning)
+        (delete-trailing-whitespace current-line-end (point-max)))))
+
   ;; add a soft line wrap for overly long lines
   (add-hook 'org-mode-hook 'visual-line-mode)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (add-hook 'before-save-hook 'delete-trailing-whitespace-non-disruptive)
   (add-hook 'auto-save-hook 'org-save-all-org-buffers)
 
   ;; bind `function.outer`(entire function block) to `f` for use in things like `vaf`, `yaf`
