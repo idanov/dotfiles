@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
           sql-capitalize-keywords t
           sql-capitalize-keywords-blacklist '("name")
           sql-capitalize-keywords-disable-interactive t)
+     spacemacs-editing-visual
      (spacemacs-editing :variables
                         vim-style-enable-undo-region t)
      semantic
