@@ -134,6 +134,7 @@ This function should only modify configuration layer settings."
           org-superstar-headline-bullets-list '("◉" "○" "●" "◎" "◍" "◈" "◇" "◆")
           org-enable-sticky-header t
           org-enable-reveal-js-support t
+          org-html-htmlize-output-type 'css
           org-enable-hugo-support t
           org-download-image-dir "~/org/images"
           org-download-method 'directory
