@@ -43,6 +43,8 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     (osx :variables osx-option-as 'meta
+          osx-right-option-as 'none)
      auto-completion
      better-defaults
      emacs-lisp
