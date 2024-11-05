@@ -1,9 +1,9 @@
-import = [
+general.import = [
   "~/.config/alacritty/macos.toml",
   "~/.config/alacritty/linux.toml",
 ]
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-l", "-c", "tmux new -A -s default"]
 
