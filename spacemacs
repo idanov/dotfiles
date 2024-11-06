@@ -66,6 +66,7 @@ This function should only modify configuration layer settings."
              openai-key (getenv "OPENAI_API_KEY")
              openai-user (getenv "OPENAI_USER")
              )
+     (llm-client :variables llm-client-enable-gptel t)
      (git :variables git-enable-magit-delta-plugin nil)
      (helm :variables helm-follow-mode-persistent t)
      (tree-sitter :variables
