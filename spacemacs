@@ -200,6 +200,11 @@ This function should only modify configuration layer settings."
           org-enable-org-contacts-support t
           org-contacts-files '("~/org/areas.org")
           )
+     (mu4e :variables
+           mu4e-enable-async-operations t
+           mu4e-enable-mode-line t
+           mu4e-enable-notifications t
+           )
      (tabs :variables tabs-selected-tab-bar 'left)
      (treemacs :variables
                treemacs-use-scope-type 'Perspectives
@@ -979,6 +984,29 @@ If in `evil-insert-state`, skip deleting trailing whitespace on the current line
   (setq epg-pinentry-mode 'loopback)
   (setq auth-sources '("~/.authinfo.gpg"))
 
+  ;; mu4e setup
+  ;;; Set up some common mu4e variables
+  (setq mu4e-maildir "~/.mail/gmail/"
+        mu4e-sent-folder "/[Gmail]/Sent Mail"
+        mu4e-drafts-folder "/[Gmail]/Drafts"
+        mu4e-trash-folder "/[Gmail]/Bin"
+        mu4e-refile-folder "/[Gmail]/All Mail"
+        mu4e-get-mail-command "mbsync -a"
+        mu4e-update-interval nil
+        mu4e-compose-signature-auto-include nil
+        mu4e-view-show-images t
+        mu4e-view-show-addresses t)
+
+  ;; shortcuts
+  (setq mu4e-maildir-shortcuts
+        '( ("/INBOX" . ?i)
+           ("/[Gmail]/Sent Mail" . ?s)
+           ("/[Gmail]/All Mail" . ?a)))
+
+  ;; SMTP setup
+  (setq sendmail-program "msmtp")
+  (setq send-mail-function 'sendmail-send-it
+        message-send-mail-function 'sendmail-send-it)
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
@@ -994,7 +1022,7 @@ This function is called at the very end of Spacemacs initialization."
    '(evil-want-Y-yank-to-eol nil)
    '(gptel-default-mode 'org-mode)
    '(package-selected-packages
-     '(ellama plz gptel evil-tree-edit centaur-tabs nginx-mode pcsv vmd-mode ansible ansible-doc company-ansible jinja2-mode company-terraform terraform-mode hcl-mode tree-sitter-langs ts-fold tree-sitter tsc cargo counsel-gtags counsel swiper ivy flycheck-rust ggtags helm-gtags racer ron-mode rust-mode toml-mode flyspell-popup magit-delta spacegray-theme import-js grizzl add-node-modules-path org-roam-ui diff-hl git-gutter-fringe git-gutter phpunit phpcbf php-extras php-auto-yasnippets npm-mode lsp-pyright lsp-origami origami lsp-latex geben drupal-mode csv-mode company-phpactor phpactor composer php-runtime company-php ac-php-core xcscope php-mode vimrc-mode solidity-flycheck solidity-mode dactyl-mode emacs-conflict persistent-scratch conda org-vcard org-roam-server org-roam emacsql-sqlite3 bulgarian-holidays ediprolog stickyfunc-enhance srefactor systemd org-global-capture org-capture-pop-frame pdf-tools tablist nov esxml org-sticky-header org-journal merlin-eldoc xterm-color vterm terminal-here shell-pop multi-term dap-mode posframe bui eshell-z eshell-prompt-extras esh-help tern yapfify yaml-mode web-beautify utop tuareg caml tide typescript-mode seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake pytest pyenv-mode py-isort prettier-js pippel pipenv pyvenv pip-requirements ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode simple-httpd live-py-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc importmagic epc ctable concurrent deferred helm-pydoc helm-lsp lsp-mode dash-functional groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ fringe-helper git-gutter+ dash flycheck-ocaml merlin flycheck-credo emojify emoji-cheat-sheet-plus dune cython-mode company-emoji company-anaconda chruby bundler inf-ruby browse-at-remote blacken anaconda-mode pythonic alchemist elixir-mode leetcode graphql aio yasnippet-snippets treemacs-magit smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org-brain mmm-mode markdown-toc markdown-mode magit-svn magit-section magit-gitflow magit-popup htmlize helm-org-rifle helm-org helm-gitignore helm-git-grep helm-company helm-c-yasnippet gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org evil-magit magit git-commit with-editor transient company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
+     '(helm-mu ellama plz gptel evil-tree-edit centaur-tabs nginx-mode pcsv vmd-mode ansible ansible-doc company-ansible jinja2-mode company-terraform terraform-mode hcl-mode tree-sitter-langs ts-fold tree-sitter tsc cargo counsel-gtags counsel swiper ivy flycheck-rust ggtags helm-gtags racer ron-mode rust-mode toml-mode flyspell-popup magit-delta spacegray-theme import-js grizzl add-node-modules-path org-roam-ui diff-hl git-gutter-fringe git-gutter phpunit phpcbf php-extras php-auto-yasnippets npm-mode lsp-pyright lsp-origami origami lsp-latex geben drupal-mode csv-mode company-phpactor phpactor composer php-runtime company-php ac-php-core xcscope php-mode vimrc-mode solidity-flycheck solidity-mode dactyl-mode emacs-conflict persistent-scratch conda org-vcard org-roam-server org-roam emacsql-sqlite3 bulgarian-holidays ediprolog stickyfunc-enhance srefactor systemd org-global-capture org-capture-pop-frame pdf-tools tablist nov esxml org-sticky-header org-journal merlin-eldoc xterm-color vterm terminal-here shell-pop multi-term dap-mode posframe bui eshell-z eshell-prompt-extras esh-help tern yapfify yaml-mode web-beautify utop tuareg caml tide typescript-mode seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake pytest pyenv-mode py-isort prettier-js pippel pipenv pyvenv pip-requirements ocp-indent ob-elixir nodejs-repl mvn minitest meghanada maven-test-mode lsp-ui lsp-treemacs lsp-python-ms lsp-java livid-mode skewer-mode simple-httpd live-py-mode json-navigator hierarchy json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc importmagic epc ctable concurrent deferred helm-pydoc helm-lsp lsp-mode dash-functional groovy-mode groovy-imports pcache gradle-mode git-gutter-fringe+ fringe-helper git-gutter+ dash flycheck-ocaml merlin flycheck-credo emojify emoji-cheat-sheet-plus dune cython-mode company-emoji company-anaconda chruby bundler inf-ruby browse-at-remote blacken anaconda-mode pythonic alchemist elixir-mode leetcode graphql aio yasnippet-snippets treemacs-magit smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org-brain mmm-mode markdown-toc markdown-mode magit-svn magit-section magit-gitflow magit-popup htmlize helm-org-rifle helm-org helm-gitignore helm-git-grep helm-company helm-c-yasnippet gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org evil-magit magit git-commit with-editor transient company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds google-translate golden-ratio font-lock+ flycheck-package flycheck-elsa flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu emr elisp-slime-nav editorconfig dumb-jump dotenv-mode diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))
    '(warning-suppress-types '((comp) (comp) (comp))))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
