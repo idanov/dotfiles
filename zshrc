@@ -53,3 +53,15 @@ fi
 
 # Enable iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Show cert validity
+function seecert () {
+  nslookup $1
+  (openssl s_client -showcerts -servername $1 -connect $1:443 <<< "Q" | openssl x509 -text | grep -iA2 "Validity")
+}
+
+# Add useful aliases
+alias k='kubectl'
+magit() {
+ emacsclient -c -a "" -F '(quote (name . "magit") (width . 100) (height . 40) (minibuffer . t) (left . 632) (top . 252) (user-position . t) (menu-bar-lines . 0))' -e '(progn (magit-status) (delete-other-windows) (x-focus-frame nil))'
+}
