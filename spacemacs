@@ -792,6 +792,12 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
             (goto-char (point-max))))))
 
   (spacemacs/set-leader-keys "ao;" 'helm-org-rifle-agenda-files)
+  ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kd" 'anki-editor-delete-note-at-point)
+  ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kp" 'anki-editor-push-note-at-point)
+  ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kP" 'anki-editor-push-notes)
+  ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kN" 'anki-editor-push-new-notes)
+  ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "ki" 'anki-editor-insert-note)
+
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.1)
   (setq magit-delta-delta-args
