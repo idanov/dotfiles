@@ -9,6 +9,7 @@
     ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.inputrc: inputrc
     ~/.spacemacs: spacemacs
     ~/.tmux.conf: tmux.conf
     ~/.tmux: tmux/
