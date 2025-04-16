@@ -2,24 +2,79 @@
   {
     "context": "Dock",
     "bindings": {
-      "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-w h": "workspace::ActivatePaneLeft",
+      "ctrl-w l": "workspace::ActivatePaneRight",
+      "ctrl-w k": "workspace::ActivatePaneUp",
+      "ctrl-w j": "workspace::ActivatePaneDown",
+      "alt-h": "workspace::ActivatePaneLeft",
+      "alt-l": "workspace::ActivatePaneRight",
+      "alt-k": "workspace::ActivatePaneUp",
+      "alt-j": "workspace::ActivatePaneDown"
       // ... or other keybindings
     }
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
+      "shift-s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Put key bindings here if you want them to work in normal & visual mode.
+    }
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      // Put key bindings here (in addition to the context above) if you want them to
+      // work when no editor exists.
+      // "space f": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      // Vim mode comes with shortcuts to surround the selection in normal mode (ys),
+      // but it doesn't have a shortcut to add surrounds in visual mode. By default,
+      // shift-s substitutes the selection (erases the text and enters insert mode).
+      // To use s to add surrounds in visual mode, you can add the following object to your keymap. 
+      "s": ["vim::PushAddSurrounds", {}]
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      // Enable SneakMotion
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
     }
   }
+  // If you prefer your cursor to wrap between lines, override these keybindings:
+  // In VimScript, this would look like this:
+  //  set whichwrap+=<,>,[,],h,l
+  // {
+  //   "context": "VimControl && !menu",
+  //   "bindings": {
+  //     "left": "vim::WrappingLeft",
+  //     "right": "vim::WrappingRight",
+  //     "h": "vim::WrappingLeft",
+  //     "l": "vim::WrappingRight"
+  //   }
+  // }
   // ,
   // {
   //   "context": "VimControl && !menu && vim_mode != operator",
