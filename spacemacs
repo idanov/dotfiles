@@ -202,11 +202,6 @@ This function should only modify configuration layer settings."
           org-enable-org-contacts-support t
           org-contacts-files '("~/org/areas.org")
           )
-     (mu4e :variables
-           mu4e-enable-async-operations t
-           mu4e-enable-mode-line t
-           mu4e-enable-notifications t
-           )
      (tabs :variables tabs-selected-tab-bar 'left)
      (treemacs :variables
                treemacs-use-scope-type 'Perspectives
@@ -993,29 +988,6 @@ If in `evil-insert-state`, skip deleting trailing whitespace on the current line
   (setq epg-pinentry-mode 'loopback)
   (setq auth-sources '("~/.authinfo.gpg"))
 
-  ;; mu4e setup
-  ;;; Set up some common mu4e variables
-  (setq mu4e-maildir "~/.mail/gmail/"
-        mu4e-sent-folder "/[Gmail]/Sent Mail"
-        mu4e-drafts-folder "/[Gmail]/Drafts"
-        mu4e-trash-folder "/[Gmail]/Bin"
-        mu4e-refile-folder "/[Gmail]/All Mail"
-        mu4e-get-mail-command "mbsync -a"
-        mu4e-update-interval nil
-        mu4e-compose-signature-auto-include nil
-        mu4e-view-show-images t
-        mu4e-view-show-addresses t)
-
-  ;; shortcuts
-  (setq mu4e-maildir-shortcuts
-        '( ("/INBOX" . ?i)
-           ("/[Gmail]/Sent Mail" . ?s)
-           ("/[Gmail]/All Mail" . ?a)))
-
-  ;; SMTP setup
-  (setq sendmail-program "msmtp")
-  (setq send-mail-function 'sendmail-send-it
-        message-send-mail-function 'sendmail-send-it)
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
