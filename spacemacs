@@ -793,6 +793,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         (or (outline-next-heading)
             (goto-char (point-max))))))
 
+  (setq tramp-default-method "ssh")
   (spacemacs/set-leader-keys "ao;" 'helm-org-rifle-agenda-files)
   ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kd" 'anki-editor-delete-note-at-point)
   ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kp" 'anki-editor-push-note-at-point)
