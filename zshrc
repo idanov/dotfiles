@@ -32,6 +32,10 @@ fi
 #######################
 setopt histignorespace
 setopt share_history
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+export HISTORY_IGNORE="(ls|cd|pwd|exit)*"
 # Environmental vars
 export EDITOR="vim"
 export VISUAL="emacsclient -c -a emacs"
@@ -78,4 +82,5 @@ fi
 
 # Enable iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 
