@@ -148,7 +148,9 @@ This function should only modify configuration layer settings."
           org-enable-notifications t
           org-start-notification-daemon-on-startup t
           org-agenda-files '("~/org/projects.org"
-                             "~/org/areas.org")
+                             "~/org/areas.org"
+                             "~/org/roam/journals/"
+                             )
           org-agenda-todo-ignore-with-date t
           org-agenda-skip-scheduled-if-done t
           org-agenda-include-diary t
