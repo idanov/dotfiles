@@ -40,7 +40,10 @@
     "use_smartcase_find": true,
     // Use relative line numbers in normal mode, absolute in insert mode
     // c.f. https://github.com/jeffkreeftmeijer/vim-numbertoggle
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
+    "custom_digraphs": {
+      "fz": "🧟‍♀️"
+    }
   },
   "relative_line_numbers": true,
   "cursor_blink": false,
