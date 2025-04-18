@@ -10,12 +10,12 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "base_keymap": "JetBrains",
   "autosave": {
