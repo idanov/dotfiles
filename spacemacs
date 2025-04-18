@@ -221,6 +221,8 @@ This function should only modify configuration layer settings."
              python-format-on-save t
              python-sort-imports-on-save t
              python-indent-guess-indent-offset-verbose nil
+             python-shell-interpreter "python3"
+             importmagic-python-interpreter "python3"
              )
      )
 
@@ -961,7 +963,7 @@ If in `evil-insert-state`, skip deleting trailing whitespace on the current line
                pyvenv-virtual-env-name)
       (setq doom-modeline-env--version (concat doom-modeline-env--version " (" pyvenv-virtual-env-name ")"))
       ))
-  (add-hook 'doom-modeline-after-update-env-hook #'idanov/add-python-env)
+  ;; (add-hook 'doom-modeline-after-update-env-hook #'idanov/add-python-env)
   (display-time-mode t)
   (display-battery-mode t)
   (setq vc-follow-symlinks nil)
