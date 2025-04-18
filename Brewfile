@@ -8,7 +8,7 @@ brew "bat"
 brew "cloc"
 brew "cmake"
 brew "coreutils"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-dragon-icon", "with-imagemagick"]
+brew "d12frosted/emacs-plus/emacs-plus", args: ["with-dragon-icon", "with-imagemagick", "with-xwidgets"]
 brew "difftastic"
 brew "fd"
 brew "freetds"
