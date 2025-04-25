@@ -139,16 +139,16 @@ This function should only modify configuration layer settings."
           org-enable-reveal-js-support t
           org-html-htmlize-output-type 'css
           org-enable-hugo-support t
-          org-download-image-dir "~/org/images"
+          org-download-image-dir "~/org/roam/assets/"
           org-download-method 'directory
           org-download-heading-lvl nil
           org-download-screenshot-method (if (eq system-type 'darwin) "pngpaste %s" "gnome-screenshot -a -f %s")
           org-image-actual-width 700
-          org-default-notes-file "~/org/inbox.org"
+          org-default-notes-file "~/org/roam/pages/inbox.org"
           org-enable-notifications t
           org-start-notification-daemon-on-startup t
-          org-agenda-files '("~/org/projects.org"
-                             "~/org/areas.org"
+          org-agenda-files '("~/org/roam/pages/projects.org"
+                             "~/org/roam/pages/areas.org"
                              "~/org/roam/journals/"
                              )
           org-agenda-todo-ignore-with-date t
@@ -174,9 +174,9 @@ This function should only modify configuration layer settings."
                                                 (org-agenda-overriding-header "Next tasks at home:"))))
                                         ((org-agenda-sorting-strategy '(habit-up priority-down))))
                                        )
-          org-refile-targets '(("~/org/someday.org" :maxlevel . 2)
-                               ("~/org/projects.org" :maxlevel . 2)
-                               ("~/org/areas.org" :maxlevel . 2))
+          org-refile-targets '(("~/org/roam/pages/someday.org" :maxlevel . 2)
+                               ("~/org/roam/pages/projects.org" :maxlevel . 2)
+                               ("~/org/roam/pages/areas.org" :maxlevel . 2))
           ;; this one is to allow for top-level refile
           org-refile-use-outline-path 'file
           ;; this one is to show all headings and files in helm
@@ -200,7 +200,7 @@ This function should only modify configuration layer settings."
           org-hide-emphasis-markers t
           org-enable-transclusion-support t
           org-enable-org-contacts-support t
-          org-contacts-files '("~/org/areas.org")
+          org-contacts-files '("~/org/roam/pages/areas.org")
           )
      (tabs :variables tabs-selected-tab-bar 'left)
      (treemacs :variables
@@ -843,11 +843,11 @@ before packages are loaded."
 
   (setq require-final-newline t)
   (setq holiday-other-holidays (cl-remove-duplicates (append holiday-other-holidays holiday-bulgarian-holidays)))
-  (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/inbox.org" "Tasks")
+  (setq org-capture-templates '(("t" "Task" entry (file+headline "~/org/roam/pages/inbox.org" "Tasks")
                                  "* TODO %?\n  %u\n  %a")
-                                ("n" "Note" entry (file+headline "~/org/inbox.org" "Notes")
+                                ("n" "Note" entry (file+headline "~/org/roam/pages/inbox.org" "Notes")
                                  "* %?\nEntered on %U\n  %i\n  %a")
-                                ("p" "Person" entry (file+headline "~/org/areas.org" "People")
+                                ("p" "Person" entry (file+headline "~/org/roam/pages/areas.org" "People")
                                  "* %(org-contacts-template-name)
 :PROPERTIES:
 :EMAIL: %(org-contacts-template-email)
