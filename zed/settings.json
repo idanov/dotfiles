@@ -48,8 +48,8 @@
   "relative_line_numbers": true,
   "cursor_blink": false,
   "scroll_beyond_last_line": "off",
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "ui_font_size": 13,
+  "buffer_font_size": 13,
   "terminal": {
     "font_family": "MesloLGS NF"
   },
