@@ -83,4 +83,5 @@ fi
 # Enable iterm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-
+# Cross-platform open command
+[[ "$OSTYPE" == "linux-gnu"* ]] && ! command -v open &> /dev/null && alias open='xdg-open'
