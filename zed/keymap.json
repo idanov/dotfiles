@@ -14,6 +14,25 @@
     }
   },
   {
+    "context": "DropdownTrigger",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious"
+    }
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      // Traditional Vim behavior
+      "Q": "vim::AnyQuotes",
+      "B": "vim::AnyBrackets",
+
+      // mini.ai plugin behavior
+      "q": "vim::MiniQuotes",
+      "b": "vim::MiniBrackets"
+    }
+  },
+  {
     "context": "vim_mode == visual",
     "bindings": {
       "shift-s": ["vim::PushAddSurrounds", {}]
@@ -51,7 +70,7 @@
       // Vim mode comes with shortcuts to surround the selection in normal mode (ys),
       // but it doesn't have a shortcut to add surrounds in visual mode. By default,
       // shift-s substitutes the selection (erases the text and enters insert mode).
-      // To use s to add surrounds in visual mode, you can add the following object to your keymap. 
+      // To use s to add surrounds in visual mode, you can add the following object to your keymap.
       "s": ["vim::PushAddSurrounds", {}]
     }
   },
@@ -60,7 +79,9 @@
     "bindings": {
       // Enable SneakMotion
       "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
+      "shift-s": "vim::PushSneakBackward",
+      "alt-o": "vim::SelectLargerSyntaxNode",
+      "alt-i": "vim::SelectSmallerSyntaxNode"
     }
   }
   // If you prefer your cursor to wrap between lines, override these keybindings:
