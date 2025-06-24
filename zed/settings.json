@@ -50,6 +50,9 @@
   "scroll_beyond_last_line": "off",
   "ui_font_size": 13,
   "buffer_font_size": 13,
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "show_whitespaces": "boundary",
   "terminal": {
     "font_family": "MesloLGS NF"
   },
