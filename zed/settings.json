@@ -83,5 +83,23 @@
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "changelog/*"
+  ],
+  "minimap": {
+    "show": "auto",
+    "thumb": "always",
+    "thumb_border": "full",
+    "current_line_highlight": null
   }
 }
