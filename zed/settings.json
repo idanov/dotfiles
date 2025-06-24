@@ -27,7 +27,7 @@
     "diagnostics": false,
     "metrics": false
   },
-  "theme": "One Dark",
+  "theme": "Catppuccin Mocha - No Italics",
   "vim_mode": true,
   "vim": {
     // "always": use system clipboard when no register is specified
