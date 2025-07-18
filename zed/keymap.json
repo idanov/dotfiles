@@ -21,6 +21,25 @@
     }
   },
   {
+    "context": "Picker > Editor",
+    "use_key_equivalents": true,
+    "bindings": {
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-j": "menu::SelectNext"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "up": "editor::ContextMenuPrevious",
+      "ctrl-k": "editor::ContextMenuPrevious",
+      "down": "editor::ContextMenuNext",
+      "ctrl-j": "editor::ContextMenuNext",
+      "pageup": "editor::ContextMenuFirst",
+      "pagedown": "editor::ContextMenuLast"
+    }
+  },
+  {
     "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
     "bindings": {
       // Traditional Vim behavior
