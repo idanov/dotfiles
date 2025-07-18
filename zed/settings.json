@@ -34,8 +34,6 @@
     // "never": don't use system clipboard unless "+ or "* is specified
     // "on_yank": use system clipboard for yank operations when no register is specified
     "use_system_clipboard": "always",
-    // Let `f` and `t` motions extend across multiple lines
-    "use_multiline_find": true,
     // Let `f` and `t` motions match case insensitively if the target is lowercase
     "use_smartcase_find": true,
     // Use relative line numbers in normal mode, absolute in insert mode
@@ -58,9 +56,6 @@
   },
   "lsp": {
     "rust-analyzer": {
-      "binary": {
-        "path_lookup": true
-      },
       "initialization_options": {
         "inlayHints": {
           "maxLength": 25,
@@ -94,7 +89,8 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    "changelog/*"
+    "changelog/*",
+    "node_modules/*",
   ],
   "minimap": {
     "show": "auto",
