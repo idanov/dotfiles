@@ -112,6 +112,7 @@ This function should only modify configuration layer settings."
                  typescript-fmt-tool 'prettier
                  typescript-linter 'eslint
                  typescript-backend 'lsp)
+     (json :variables json-fmt-tool 'prettier)
      (javascript :variables
                  node-add-modules-path t
                  js2-mode-show-strict-warnings nil
