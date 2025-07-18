@@ -16,6 +16,9 @@
     ~/.config/alacritty/alacritty.toml:
       create: true
       path: alacritty.toml
+    ~/.config/helix/config.toml:
+      create: true
+      path: helix.toml
     ~/.config/zed/keymap.json:
       create: true
       path: zed/keymap.json
