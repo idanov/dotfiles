@@ -10,13 +10,13 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "zed.dev",
-      "model": "claude-3.7-sonnet"
+      "model": "claude-sonnet-4"
     },
-    "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4"
-    }
+    },
+    "default_profile": "write",
   },
   "features": {
     "edit_prediction_provider": "zed"
@@ -115,7 +115,7 @@
     "**/.classpath",
     "**/.settings",
     "changelog/*",
-    "node_modules/*",
+    "node_modules/*"
   ],
   "minimap": {
     "show": "auto",
