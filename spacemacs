@@ -1081,7 +1081,9 @@ This function is called at the very end of Spacemacs initialization."
                centered-cursor-mode auto-highlight-symbol auto-compile
                aggressive-indent ace-link ace-jump-helm-line))
    '(safe-local-variable-values
-     '((rustic-indent-offset . 4) (typescript-backend . tide)
+     '((web-mode-indent-style . 2) (web-mode-block-padding . 4)
+       (web-mode-script-padding . 4) (web-mode-style-padding . 4)
+       (rustic-indent-offset . 4) (typescript-backend . tide)
        (typescript-backend . lsp) (javascript-backend . tide)
        (javascript-backend . tern) (javascript-backend . lsp)))
    '(warning-suppress-types '((comp) (comp) (comp))))
