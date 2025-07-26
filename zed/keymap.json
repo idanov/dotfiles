@@ -58,6 +58,13 @@
     }
   },
   {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space g s": ["task::Spawn", { "task_name": "gitu" }],
+      ", t": ["task::Spawn", {}]
+    }
+  },
+  {
     "context": "VimControl && !menu",
     "bindings": {
       // Put key bindings here if you want them to work in normal & visual mode.
