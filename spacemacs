@@ -241,6 +241,7 @@ This function should only modify configuration layer settings."
                                       (evil-textobj-tree-sitter)
                                       (evil-tree-edit)
                                       (doom-themes)
+                                      (catppuccin-theme)
                                       (org-modern)
                                       ;; Need to install https://foosoft.net/projects/anki-connect/
                                       (anki-editor :location (recipe :fetcher github
@@ -436,6 +437,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-themes '(doom-one
                          doom-one-light
                          doom-dracula
+                         catppuccin
                          spacemacs-dark
                          spacemacs-light)
 
@@ -796,6 +798,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
             (goto-char (point-max))))))
 
   (setq tramp-default-method "ssh")
+  (setq catppuccin-flavor 'mocha)
   (spacemacs/set-leader-keys "ao;" 'helm-org-rifle-agenda-files)
   ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kd" 'anki-editor-delete-note-at-point)
   ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "kp" 'anki-editor-push-note-at-point)
@@ -1007,6 +1010,8 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
+   '(custom-safe-themes
+     '("3793b8a8e626a24a8e6aaba21a055473990bd7f2fb69c23e75bb07014d1007c8" default))
    '(evil-want-Y-yank-to-eol nil)
    '(gptel-default-mode 'org-mode)
    '(package-selected-packages
