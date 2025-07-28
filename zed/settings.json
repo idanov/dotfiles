@@ -9,17 +9,17 @@
 {
   "agent": {
     "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
     },
     "default_model": {
-      "provider": "zed.dev",
+      "provider": "copilot_chat",
       "model": "claude-sonnet-4"
     },
     "default_profile": "write",
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
   "base_keymap": "JetBrains",
   "autosave": {
@@ -80,6 +80,15 @@
     }
   },
   "lsp": {
+    "jdtls": {
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "home": "/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home"
+          }
+        }
+      }
+    },
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {

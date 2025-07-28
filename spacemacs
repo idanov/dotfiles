@@ -106,6 +106,7 @@ This function should only modify configuration layer settings."
      epub
      pdf
      vimscript
+     java
      (typescript :variables
                  typescript-fmt-on-save t
                  typescript-indent-level 2
@@ -213,7 +214,7 @@ This function should only modify configuration layer settings."
      (spacemacs-layouts :variables
                         persp-autokill-buffer-on-remove 'kill-weak
                         spacemacs-layouts-restrict-spc-tab t)
-     (conda :variables conda-anaconda-home (file-name-parent-directory (getenv "WORKON_HOME")))
+     ;; (conda :variables conda-anaconda-home (file-name-parent-directory (getenv "WORKON_HOME")))
      (python :variables
              python-backend 'lsp
              python-lsp-server 'pyright
@@ -846,6 +847,8 @@ before packages are loaded."
   (spacemacs/set-leader-keys
     "agg" 'chatgpt-shell
     "agk" 'chatgpt-shell-clear-buffer)
+  (setq
+   gptel-backend (gptel-make-gh-copilot "Copilot"))
 
   (org-roam-db-autosync-mode)
 

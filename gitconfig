@@ -4,6 +4,7 @@
 [user]
 	name = Ivan Danov
 	email = "idanov@users.noreply.github.com"
+	signingkey = 9BE892C94C67F664
 
 [push]
 	default = simple
@@ -13,6 +14,7 @@
 	autocrlf = input
 	editor = vim
 	pager = delta
+	excludesfile = /Users/idanov/.gitignore.global
 
 [include]
 	path = ~/.gitconfig.local
@@ -54,3 +56,8 @@
 	hunk-header-style = file line-number syntax
 [github]
 	user = idanov
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+	forceSignAnnotated = true
