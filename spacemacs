@@ -77,7 +77,10 @@ This function should only modify configuration layer settings."
      (lsp :variables
           lsp-use-upstream-bindings t
           lsp-lens-enable t
-          lsp-use-lsp-ui t)
+          lsp-use-lsp-ui t
+          lsp-ui-doc-enable t
+          lsp-ui-doc-show-with-cursor t
+          lsp-ui-doc-position 'at-point)
      (markdown :variables markdown-live-preview-engine 'vmd)
      (docker :variables docker-dockerfile-backend 'lsp)
      multiple-cursors
