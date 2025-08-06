@@ -4,3 +4,5 @@ vim/bundle
 tmux/plugins/
 # Ignore tmux resurrect sessions
 tmux/resurrect/
+# Ignore lazyvim lock file
+lazy-lock.json
