@@ -60,7 +60,7 @@ This function should only modify configuration layer settings."
      spacemacs-editing-visual
      (spacemacs-editing :variables
                         vim-style-enable-undo-region t)
-     semantic
+     ;; semantic
      (docker :variables docker-dockerfile-backend 'lsp)
      (openai :variables
              openai-key (getenv "OPENAI_API_KEY")
