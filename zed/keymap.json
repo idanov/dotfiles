@@ -79,7 +79,7 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
-      // "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
+      "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
     }
   },
   {
@@ -107,7 +107,9 @@
       "s": "vim::PushSneak",
       "shift-s": "vim::PushSneakBackward",
       "alt-o": "vim::SelectLargerSyntaxNode",
-      "alt-i": "vim::SelectSmallerSyntaxNode"
+      "alt-i": "vim::SelectSmallerSyntaxNode",
+      "alt-n": "vim::SelectNextSyntaxNode",
+      "alt-p": "vim::SelectPreviousSyntaxNode"
     }
   }
   // If you prefer your cursor to wrap between lines, override these keybindings:
