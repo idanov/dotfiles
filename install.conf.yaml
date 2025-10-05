@@ -20,6 +20,9 @@
     ~/.config/alacritty/alacritty.toml:
       create: true
       path: alacritty.toml
+    ~/.config/ghostty/config:
+      create: true
+      path: ghostty.config
     ~/.config/helix/config.toml:
       create: true
       path: helix.toml
