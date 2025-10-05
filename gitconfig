@@ -4,7 +4,7 @@
 [user]
 	name = Ivan Danov
 	email = "idanov@users.noreply.github.com"
-	signingkey = 9BE892C94C67F664
+	signingkey = F8543990BE478E80
 
 [push]
 	default = simple
