@@ -13,3 +13,10 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+if [[ -z "${ZSH_CACHE_DIR}" ]]; then
+    echo "Install docker completions..."
+    mkdir -p "${ZSH_CACHE_DIR}"/completions
+    curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o "$ZSH_CACHE_DIR"/completions/_docker
+fi
+

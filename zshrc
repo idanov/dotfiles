@@ -85,3 +85,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Cross-platform open command
 [[ "$OSTYPE" == "linux-gnu"* ]] && ! command -v open &> /dev/null && alias open='xdg-open'
+
+# The following lines have been added to increase completions
+fpath+=(~/.zsh/completions)
+autoload -Uz compinit && compinit
