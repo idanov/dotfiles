@@ -122,16 +122,24 @@ automatically-unhide-macos-hidden-apps = true
     ctrl-alt-cmd-9 = 'workspace 9'
     ctrl-alt-cmd-0 = 'workspace 0'
     ctrl-alt-cmd-a = 'workspace A' # AI
-    ctrl-alt-cmd-c = 'workspace C' # VSCode
+    ctrl-alt-cmd-b = 'workspace B'
+    ctrl-alt-cmd-c = 'workspace C'
+    ctrl-alt-cmd-d = 'workspace D'
     ctrl-alt-cmd-e = 'workspace E' # Emacs
+    ctrl-alt-cmd-f = 'workspace F'
     ctrl-alt-cmd-g = 'workspace G' # Browser/Brave/Chrome/Island
     ctrl-alt-cmd-i = 'workspace I' # IntelliJ
     ctrl-alt-cmd-m = 'workspace M' # Spotify
+    ctrl-alt-cmd-n = 'workspace N' # Neovide/Vim
     ctrl-alt-cmd-o = 'workspace O' # Outlook/Mail
+    ctrl-alt-cmd-p = 'workspace P'
     ctrl-alt-cmd-r = 'workspace R' # Resource Monitor
     ctrl-alt-cmd-s = 'workspace S' # Slack
     ctrl-alt-cmd-t = 'workspace T' # Ghostty
-    ctrl-alt-cmd-v = 'workspace V' # Neovide/Vim
+    ctrl-alt-cmd-u = 'workspace U'
+    ctrl-alt-cmd-v = 'workspace V' # VSCode
+    ctrl-alt-cmd-x = 'workspace X'
+    ctrl-alt-cmd-y = 'workspace Y'
     ctrl-alt-cmd-z = 'workspace Z' # Zed
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -145,16 +153,24 @@ automatically-unhide-macos-hidden-apps = true
     ctrl-alt-cmd-shift-9 = 'move-node-to-workspace --focus-follows-window 9'
     ctrl-alt-cmd-shift-0 = 'move-node-to-workspace --focus-follows-window 0'
     ctrl-alt-cmd-shift-a = 'move-node-to-workspace --focus-follows-window A'
+    ctrl-alt-cmd-shift-b = 'move-node-to-workspace --focus-follows-window B'
     ctrl-alt-cmd-shift-c = 'move-node-to-workspace --focus-follows-window C'
+    ctrl-alt-cmd-shift-d = 'move-node-to-workspace --focus-follows-window D'
     ctrl-alt-cmd-shift-e = 'move-node-to-workspace --focus-follows-window E'
+    ctrl-alt-cmd-shift-f = 'move-node-to-workspace --focus-follows-window F'
     ctrl-alt-cmd-shift-g = 'move-node-to-workspace --focus-follows-window G'
     ctrl-alt-cmd-shift-i = 'move-node-to-workspace --focus-follows-window I'
     ctrl-alt-cmd-shift-m = 'move-node-to-workspace --focus-follows-window M'
+    ctrl-alt-cmd-shift-n = 'move-node-to-workspace --focus-follows-window N'
     ctrl-alt-cmd-shift-o = 'move-node-to-workspace --focus-follows-window O'
+    ctrl-alt-cmd-shift-p = 'move-node-to-workspace --focus-follows-window P'
     ctrl-alt-cmd-shift-r = 'move-node-to-workspace --focus-follows-window R'
     ctrl-alt-cmd-shift-s = 'move-node-to-workspace --focus-follows-window S'
     ctrl-alt-cmd-shift-t = 'move-node-to-workspace --focus-follows-window T'
+    ctrl-alt-cmd-shift-u = 'move-node-to-workspace --focus-follows-window U'
     ctrl-alt-cmd-shift-v = 'move-node-to-workspace --focus-follows-window V'
+    ctrl-alt-cmd-shift-x = 'move-node-to-workspace --focus-follows-window X'
+    ctrl-alt-cmd-shift-y = 'move-node-to-workspace --focus-follows-window Y'
     ctrl-alt-cmd-shift-z = 'move-node-to-workspace --focus-follows-window Z'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
@@ -191,10 +207,6 @@ if.app-id = 'io.island.Island.app.ndahmahimeahhbbempolmheihhcclicn'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace C'
-
-[[on-window-detected]]
 if.app-id = 'org.gnu.Emacs'
 run = 'move-node-to-workspace E'
 
@@ -205,6 +217,10 @@ run = 'move-node-to-workspace G'
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.neovide.neovide'
+run = 'move-node-to-workspace N'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
@@ -227,6 +243,5 @@ if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace T'
 
 [[on-window-detected]]
-if.app-id = 'com.neovide.neovide'
+if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace V'
-
