@@ -29,6 +29,7 @@ Plugin 'sjl/vitality.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'justinmk/vim-sneak'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
