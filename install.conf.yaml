@@ -15,6 +15,7 @@
     ~/.tmux: tmux/
     ~/.config/nvim: nvim/
     ~/.config/doom: doom/
+    ~/.config/karabiner: karabiner/
     ~/.config/aerospace/aerospace.toml:
       create: true
       path: aerospace.toml
