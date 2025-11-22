@@ -1,5 +1,4 @@
 tap "d12frosted/emacs-plus"
-tap "homebrew/bundle"
 tap "jzaleski/jzaleski"
 tap "trashhalo/brews"
 brew "aspell"
