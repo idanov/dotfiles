@@ -38,7 +38,7 @@ export SAVEHIST=10000000
 export HISTORY_IGNORE="(ls|cd|pwd|exit)*"
 # Environmental vars
 export EDITOR="vim"
-export VISUAL="emacsclient -c -a emacs"
+export VISUAL="nvim"
 export BAT_THEME="TwoDark"
 # Add scripts
 export PATH=~/.dotfiles/bin:${PATH}
