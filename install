@@ -14,6 +14,7 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
+ZSH_CACHE_DIR="${HOME}/.antigen/bundles/robbyrussell/oh-my-zsh/cache/"
 if [[ -z "${ZSH_CACHE_DIR}" ]]; then
     echo "Install docker completions..."
     mkdir -p "${ZSH_CACHE_DIR}"/completions
