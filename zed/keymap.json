@@ -134,4 +134,11 @@
   //     "g e": "vim::PreviousSubwordEnd"
   //   }
   // }
+,
+  {
+    "context": "Workspace || Editor || Terminal",
+    "bindings": {
+      "cmd-j": "workspace::ToggleBottomDock"
+    }
+  }
 ]
