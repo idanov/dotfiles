@@ -17,6 +17,7 @@
     ~/.config/doom: doom/
     ~/.config/karabiner: karabiner/
     ~/.config/iCanHazShortcut: iCanHazShortcut/
+    ~/Library/Containers/net.sonuscape.mouseless/Data/.mouseless/configs/config.yaml: mouseless.yaml
     ~/.config/aerospace/aerospace.toml:
       create: true
       path: aerospace.toml
