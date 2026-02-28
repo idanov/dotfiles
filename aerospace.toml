@@ -203,7 +203,7 @@ automatically-unhide-macos-hidden-apps = true
 
 # App assignments - always open in specific workspaces
 [[on-window-detected]]
-if.app-id = 'io.island.Island.app.ndahmahimeahhbbempolmheihhcclicn'
+if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
@@ -211,7 +211,7 @@ if.app-id = 'org.gnu.Emacs'
 run = 'move-node-to-workspace E'
 
 [[on-window-detected]]
-if.app-id = 'io.island.Island'
+if.app-id = 'com.brave.Browser'
 run = 'move-node-to-workspace G'
 
 [[on-window-detected]]
@@ -235,7 +235,19 @@ if.app-id = 'com.apple.ActivityMonitor'
 run = 'move-node-to-workspace R'
 
 [[on-window-detected]]
+if.app-id = 'com.whispersystems.signal-desktop'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+run = 'move-node-to-workspace S'
+
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
 run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
@@ -245,3 +257,7 @@ run = 'move-node-to-workspace T'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace V'
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = 'move-node-to-workspace Z'
