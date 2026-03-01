@@ -10,7 +10,7 @@ brew "btop"
 brew "cloc"
 brew "cmake"
 brew "coreutils"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-dragon-icon", "with-imagemagick", "with-xwidgets"]
+brew "d12frosted/emacs-plus/emacs-plus", args: ["with-imagemagick", "with-xwidgets"]
 brew "difftastic"
 brew "duckdb"
 brew "fd"
