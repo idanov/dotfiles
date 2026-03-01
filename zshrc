@@ -1,6 +1,8 @@
 #################
 # Antigen setup #
 #################
+# Ensure oh-my-zsh cache completions dir exists (needed by docker plugin)
+mkdir -p ~/.antigen/bundles/robbyrussell/oh-my-zsh/cache/completions
 # Load antigen
 source $HOME/.dotfiles/antigen/antigen.zsh
 # Load robbyrussell's oh-my-zsh's library
