@@ -37,6 +37,7 @@ export HISTSIZE=10000000
 export SAVEHIST=10000000
 export HISTORY_IGNORE="(ls|cd|pwd|exit)*"
 # Environmental vars
+export DO_NOT_TRACK=1
 export EDITOR="vim"
 export VISUAL="nvim"
 export BAT_THEME="TwoDark"
@@ -86,6 +87,11 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Cross-platform open command
 [[ "$OSTYPE" == "linux-gnu"* ]] && ! command -v open &> /dev/null && alias open='xdg-open'
 
+# Disable Homebrew analytics
+export HOMEBREW_NO_ANALYTICS=1
+
 # The following lines have been added to increase completions
 fpath+=(~/.zsh/completions)
 autoload -Uz compinit && compinit
+export PATH="$HOME/.local/bin:$PATH"
+
