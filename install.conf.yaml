@@ -8,6 +8,8 @@
     ~/.gitconfig: gitconfig
     ~/.vim: vim/
     ~/.vimrc: vimrc
+    ~/.zshenv: zshenv
+    ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.inputrc: inputrc
     ~/.spacemacs: spacemacs
