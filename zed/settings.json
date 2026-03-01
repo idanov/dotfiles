@@ -7,32 +7,39 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "session": {
+    "trust_all_worktrees": true,
+  },
   "icon_theme": "Catppuccin Mocha",
   "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
+      "model": "claude-3.7-sonnet",
     },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4",
     },
     "default_profile": "write",
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
-  "base_keymap": "JetBrains",
+  "base_keymap": "VSCode",
   "autosave": {
     "after_delay": {
-      "milliseconds": 100
-    }
+      "milliseconds": 100,
+    },
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
-  "theme": "Catppuccin Mocha - No Italics",
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha - No Italics",
+  },
   "vim_mode": true,
   "vim": {
     // "always": use system clipboard when no register is specified
@@ -45,10 +52,10 @@
     // c.f. https://github.com/jeffkreeftmeijer/vim-numbertoggle
     "toggle_relative_line_numbers": true,
     "custom_digraphs": {
-      "fz": "🧟‍♀️"
-    }
+      "fz": "🧟‍♀️",
+    },
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "cursor_blink": false,
   "scroll_beyond_last_line": "off",
   "ui_font_size": 13,
@@ -57,7 +64,7 @@
   "ensure_final_newline_on_save": true,
   "show_whitespaces": "boundary",
   "terminal": {
-    "font_family": "MesloLGS NF"
+    "font_family": "MesloLGS NF",
   },
   "show_completions_on_input": true,
   "show_completion_documentation": true,
@@ -67,28 +74,28 @@
       "format_on_save": "on",
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff",
+        },
+        {
+          "code_action": "source.fixAll.ruff",
         },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
-    }
+            "name": "ruff",
+          },
+        },
+      ],
+    },
   },
   "lsp": {
     "jdtls": {
       "initialization_options": {
         "settings": {
           "java": {
-            "home": "/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home"
-          }
-        }
-      }
+            "home": "/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home",
+          },
+        },
+      },
     },
     "rust-analyzer": {
       "initialization_options": {
@@ -96,23 +103,23 @@
           "maxLength": 25,
           "lifetimeElisionHints": {
             "enable": "skip_trivial",
-            "useParameterNames": true
+            "useParameterNames": true,
           },
           "typeHints": {
-            "enable": true
+            "enable": true,
           },
           "closureReturnTypeHints": {
-            "enable": "always"
-          }
-        }
-      }
-    }
+            "enable": "always",
+          },
+        },
+      },
+    },
   },
   "inlay_hints": {
     "enabled": true,
     "show_type_hints": true,
     "show_parameter_hints": true,
-    "show_other_hints": true
+    "show_other_hints": true,
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -125,12 +132,12 @@
     "**/.classpath",
     "**/.settings",
     "changelog/*",
-    "node_modules/*"
+    "node_modules/*",
   ],
   "minimap": {
     "show": "auto",
     "thumb": "always",
     "thumb_border": "full",
-    "current_line_highlight": null
-  }
+    "current_line_highlight": null,
+  },
 }
