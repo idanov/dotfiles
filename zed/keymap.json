@@ -1,6 +1,6 @@
 [
   {
-    "context": "Dock",
+    "context": "Workspace",
     "bindings": {
       "ctrl-w h": "workspace::ActivatePaneLeft",
       "ctrl-w l": "workspace::ActivatePaneRight",
