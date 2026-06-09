@@ -7,23 +7,74 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "git_panel": {
+    "dock": "right",
+  },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.9,
+    "border_size": 2.0,
+  },
+  "edit_predictions": {
+    "allow_data_collection": "no",
+    "provider": "copilot",
+  },
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+    "codex-acp": {
+      "type": "registry",
+    },
+    "opencode": {
+      "type": "registry",
+    },
+    "claude-acp": {
+      "favorite_config_option_values": {
+        "model": [
+          "sonnet"
+        ]
+      },
+      "default_config_options": {
+        "model": "default",
+        "mode": "bypassPermissions",
+      },
+      "type": "registry",
+      "default_mode": "bypassPermissions",
+    },
+  },
   "session": {
     "trust_all_worktrees": true,
   },
   "icon_theme": "Catppuccin Mocha",
   "agent": {
+    "sidebar_side": "right",
+    "dock": "right",
+    "tool_permissions": {
+      "default": "confirm",
+      "tools": {},
+    },
+    "show_turn_stats": true,
+    "play_sound_when_agent_done": "always",
     "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet",
+      "provider": "copilot",
+      "model": "claude-4.5-sonnet",
     },
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4",
+      "model": "gpt-5.3-codex",
     },
     "default_profile": "write",
-  },
-  "features": {
-    "edit_prediction_provider": "copilot",
   },
   "base_keymap": "VSCode",
   "autosave": {
@@ -88,15 +139,6 @@
     },
   },
   "lsp": {
-    "jdtls": {
-      "initialization_options": {
-        "settings": {
-          "java": {
-            "home": "/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home",
-          },
-        },
-      },
-    },
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {
