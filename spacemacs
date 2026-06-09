@@ -68,6 +68,7 @@ This function should only modify configuration layer settings."
              openai-user (getenv "OPENAI_USER")
              )
      (llm-client :variables llm-client-enable-gptel t)
+     claude-code
      (git :variables git-enable-magit-delta-plugin nil)
      (helm :variables helm-follow-mode-persistent t)
      (tree-sitter :variables
@@ -794,6 +795,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; (spacemacs/set-leader-keys-for-minor-mode 'anki-editor-mode "ki" 'anki-editor-insert-note)
 
   (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-unordered-key-sequence t)
   (setq-default evil-escape-delay 0.1)
   (setq magit-delta-delta-args
         '("--24-bit-color" "always"
@@ -995,6 +997,37 @@ If in `evil-insert-state`, skip deleting trailing whitespace on the current line
   (setq epg-pinentry-mode 'loopback)
   (setq auth-sources '("~/.authinfo.gpg"))
 
+  ;; Alt+hjkl window navigation (matching LazyVim config)
+  ;; Normal state: navigate directly
+  (define-key evil-normal-state-map (kbd "M-h") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "M-j") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "M-k") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "M-l") 'evil-window-right)
+  ;; Insert state: exit insert first, then navigate (matches LazyVim's <Esc>+navigate)
+  (define-key evil-insert-state-map (kbd "M-h") (lambda () (interactive) (evil-normal-state) (evil-window-left 1)))
+  (define-key evil-insert-state-map (kbd "M-j") (lambda () (interactive) (evil-normal-state) (evil-window-down 1)))
+  (define-key evil-insert-state-map (kbd "M-k") (lambda () (interactive) (evil-normal-state) (evil-window-up 1)))
+  (define-key evil-insert-state-map (kbd "M-l") (lambda () (interactive) (evil-normal-state) (evil-window-right 1)))
+  ;; Emacs state and other non-evil states
+  (global-set-key (kbd "M-h") 'windmove-left)
+  (global-set-key (kbd "M-j") 'windmove-down)
+  (global-set-key (kbd "M-k") 'windmove-up)
+  (global-set-key (kbd "M-l") 'windmove-right)
+  ;; vterm (terminal state): matches LazyVim's terminal-mode mappings
+  (with-eval-after-load 'vterm
+    (define-key vterm-mode-map (kbd "M-h") 'windmove-left)
+    (define-key vterm-mode-map (kbd "M-j") 'windmove-down)
+    (define-key vterm-mode-map (kbd "M-k") 'windmove-up)
+    (define-key vterm-mode-map (kbd "M-l") 'windmove-right))
+  ;; vterm font: use a Nerd Font so symbols render correctly (matching Alacritty's MesloLGS NF).
+  ;; IBM Plex Mono (the default Emacs font) has no Nerd Font glyphs, so Claude Code and
+  ;; other TUI tools show broken symbols inside vterm without this override.
+  (add-hook 'vterm-mode-hook
+            (lambda ()
+              (set (make-local-variable 'buffer-face-mode-face)
+                   '(:family "MesloLGS NF"))
+              (buffer-face-mode t)))
+
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
@@ -1011,6 +1044,7 @@ This function is called at the very end of Spacemacs initialization."
      '("3793b8a8e626a24a8e6aaba21a055473990bd7f2fb69c23e75bb07014d1007c8" default))
    '(evil-want-Y-yank-to-eol nil)
    '(gptel-default-mode 'org-mode)
+   '(org-agenda-files nil)
    '(package-selected-packages
      '(ac-ispell ac-php-core ace-jump-helm-line ace-link add-node-modules-path
                  aggressive-indent aio alchemist alert anaconda-mode ansible
