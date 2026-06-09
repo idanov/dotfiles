@@ -29,12 +29,11 @@
 	diffFilter = delta --color-only --features=interactive
 
 [delta]
-	features = decorations
-	features = line-numbers
+	features = decorations line-numbers
 	navigate = true
 
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 
 [diff]
 	colorMoved = default
