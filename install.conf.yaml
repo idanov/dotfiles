@@ -6,7 +6,6 @@
   link:
     ~/.dotfiles: ""
     ~/.gitconfig: gitconfig
-    ~/.vim: vim/
     ~/.vimrc: vimrc
     ~/.zshenv: zshenv
     ~/.zprofile: zprofile

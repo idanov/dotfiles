@@ -13,7 +13,7 @@ brew "btop"
 brew "cloc"
 brew "cmake"
 brew "coreutils"
-brew "d12frosted/emacs-plus/emacs-plus", args: ["with-imagemagick", "with-xwidgets"]
+brew "d12frosted/emacs-plus/emacs-plus-app"
 brew "difftastic"
 brew "duckdb"
 brew "dyff"
