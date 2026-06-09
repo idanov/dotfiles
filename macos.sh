@@ -17,6 +17,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable natural scrolling (traditional/normal direction)
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# Disable three-finger tap (look up & data detectors)
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 0
 
 # ── Finder ────────────────────────────────────────────────────────────────────
 # Show all file extensions
@@ -35,6 +37,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # ── Dock ──────────────────────────────────────────────────────────────────────
+# Position on the left
+defaults write com.apple.dock orientation -string "left"
 # Auto-hide the Dock
 defaults write com.apple.dock autohide -bool true
 # Remove auto-hide delay
@@ -43,9 +47,8 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock show-recents -bool false
 
 # ── Screenshots ───────────────────────────────────────────────────────────────
-# Save to ~/Desktop/Screenshots instead of ~/Desktop
-mkdir -p ~/Desktop/Screenshots
-defaults write com.apple.screencapture location -string "~/Desktop/Screenshots"
+# Save to ~/Documents
+defaults write com.apple.screencapture location -string "~/Documents/"
 # Save as PNG
 defaults write com.apple.screencapture type -string "png"
 # Disable shadow
