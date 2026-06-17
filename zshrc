@@ -1,6 +1,11 @@
 #################
 # Antigen setup #
 #################
+# Configure oh-my-zsh paths before Antigen loads cached plugins.
+export ZSH="$HOME/.antigen/bundles/robbyrussell/oh-my-zsh"
+export ZSH_CACHE_DIR="$ZSH/cache"
+mkdir -p "$ZSH_CACHE_DIR/completions"
+
 # Load antigen
 source $HOME/.dotfiles/antigen/antigen.zsh
 # Load robbyrussell's oh-my-zsh's library
@@ -19,8 +24,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen theme romkatv/powerlevel10k
 # Tell antigen that you're done
 antigen apply
-# Ensure oh-my-zsh cache completions dir exists (needed by docker plugin, must be after antigen apply)
-mkdir -p ~/.antigen/bundles/robbyrussell/oh-my-zsh/cache/completions
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
