@@ -44,7 +44,7 @@
         ]
       },
       "default_config_options": {
-        "model": "default",
+        "model": "sonnet",
         "mode": "bypassPermissions",
       },
       "type": "registry",
