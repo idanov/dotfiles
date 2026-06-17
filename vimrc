@@ -45,6 +45,11 @@ au FocusGained,BufEnter * silent! checktime
 " like <leader>w saves the current file
 let mapleader = ","
 
+" Share clipboard with the OS (works on macOS and Linux with +clipboard)
+if has('clipboard')
+    set clipboard=unnamed,unnamedplus
+endif
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
