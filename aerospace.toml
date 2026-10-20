@@ -221,11 +221,19 @@ if.app-id = 'org.keepassxc.keepassxc'
 run = ['move-node-to-workspace 1', 'layout floating']
 
 [[on-window-detected]]
+if.app-id = 'io.zsa.keymapp'
+run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
 if.app-id = 'com.openai.chat'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
 if.app-id = 'com.anthropic.claudefordesktop'
+run = 'move-node-to-workspace A'
+
+[[on-window-detected]]
+if.app-id = 'ai.elementlabs.lmstudio'
 run = 'move-node-to-workspace A'
 
 [[on-window-detected]]
@@ -242,6 +250,10 @@ run = 'move-node-to-workspace F'
 
 [[on-window-detected]]
 if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace G'
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
 run = 'move-node-to-workspace G'
 
 [[on-window-detected]]
@@ -266,6 +278,10 @@ run = 'move-node-to-workspace P'
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij'
+run = 'move-node-to-workspace I'
+
+[[on-window-detected]]
+if.app-id = 'com.linear'
 run = 'move-node-to-workspace I'
 
 [[on-window-detected]]
