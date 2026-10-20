@@ -17,7 +17,9 @@
     ~/.config/nvim: nvim/
     ~/.config/doom: doom/
     ~/.config/karabiner: karabiner/
-    ~/.config/iCanHazShortcut: iCanHazShortcut/
+    ~/Library/Application Support/iCanHazShortcut/ichs-config.toml:
+      create: true
+      path: iCanHazShortcut/ichs-config.toml
     ~/Library/Containers/net.sonuscape.mouseless/Data/.mouseless/configs/config.yaml:
       type: hardlink
       force: true

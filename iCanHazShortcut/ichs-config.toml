@@ -1,0 +1,48 @@
+check_for_updates = true
+config_version = 3
+populate_menu_with_actions = true
+set_workdir_with_cd = false
+shell = "/bin/zsh -l"
+show_hotkeys_in_menu = true
+show_icon_in_statusbar = true
+start_on_login = true
+
+[window]
+height = 600
+width = 800
+x = -1
+y = -1
+
+[window.shortcuts_table]
+action_column = true
+action_column_width = 150
+command_column = true
+command_column_width = 280
+shortcut_column = true
+shortcut_column_width = 110
+workdir_column = false
+workdir_column_width = 120
+
+[[shortcuts]]
+action = "EmacsCapture"
+category = ""
+command = "emacsclient -c -a \"\" -F '(quote (name . \"capture\") (width . 90) (height . 20) (minibuffer . t) (left . 632) (top . 252) (user-position . t) (menu-bar-lines . 0))' -e '(activate-capture-frame)'"
+enabled = true
+shortcut = "⌃⌘K"
+workdir = ""
+
+[[shortcuts]]
+action = "OrgRoam Capture"
+category = ""
+command = "emacsclient -c -a \"\" -F '(quote (name . \"capture\") (width . 90) (height . 20) (minibuffer . t) (left . 632) (top . 252) (user-position . t) (menu-bar-lines . 0))' -e '(activate-capture-frame t)'"
+enabled = true
+shortcut = "⌃⌘J"
+workdir = ""
+
+[[shortcuts]]
+action = "OrgAgenda Dashboard"
+category = ""
+command = "emacsclient -c -a \"\" -F '(quote (name . \"agenda\") (width . 120) (height . 40) (left . 200) (top . 100) (user-position . t))' -e '(activate-agenda-frame)'"
+enabled = true
+shortcut = "⌃⌘A"
+workdir = ""
